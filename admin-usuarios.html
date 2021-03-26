@@ -39,7 +39,7 @@
                         <a class="nav-link  " href="./admin-productos.html">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ventas?</a>
+                        <a class="nav-link" href="#">Ventas</a>
                     </li>
                 </ul>
             </div>
@@ -48,8 +48,105 @@
     <header>
 
     </header>
+    <!-- Alta de Usuarios -->
     <section>
-
+        <div class="card m-auto col-lg-4 col-sm-8 col-10 mt-3 mb-3">
+            <form class="formulario" id="formulario">
+                <h1 class="text-center mt-3" id="titulo">Alta de Usuario</h1>
+                
+                <div class="mx-5 mt-2 mb-3">
+                    <div class="">
+                        <label class="" for="inputUsuario">Usuario</label>
+                    </div>
+                    <div class="">
+                        <input class="w-100" type="text" id="inputUsuario" required>
+                    </div>
+                </div>
+                <div class="mx-5 mt-2 mb-3">
+                    <div class="">
+                        <label class="" for="inputNombre">Nombre y Apellido</label>
+                    </div>
+                    <div class="">
+                        <input class="w-100" type="text" id="inputNombre" required>
+                    </div>
+                </div>
+                <div class="mx-5 mt-2 mb-3">
+                    <div class="">
+                        <label class="" for="inputCorreo">Correo electronico</label>
+                    </div>
+                    <div class="">
+                        <input class="w-100" type="email" id="inputCorreo" required>
+                    </div>
+                </div>
+                <div class="mx-5 mt-2 mb-3">
+                    <div class="">
+                        <label class="" for="inputContraseña">Contraseña</label>
+                    </div>
+                    <div class="">
+                        <input class="w-100" type="password" id="inputContraseña" required>
+                    </div>
+                </div>
+                <div class="mx-5 my-3">
+                    <label for="inputRol">Rol</label>
+                    <select id="inputRol" required>
+                        <option>Administrador</option>
+                        <option>Empleado</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-end mx-5 mt-3 mb-3">
+                    <button class="btn btn-primary" type="submit">Agregar</button>
+                </div>
+            </form>
+        </div>
+        <!-- Tabla Usuarios -->
+        <div class="m-auto">
+            <table class="table tabla-azul">
+                <thead>
+                    <tr>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Nombre y Apellido</th>
+                        <th scope="col">Correo electronico</th>
+                        <th scope="col">Rol</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla">
+                    <tr>
+                        <td>jtruquin</td>
+                        <td>Javier Truquin</td>
+                        <td>javiertruquin@gmail.com</td>
+                        <td>Administrador</td>
+                        <td>
+                            <!-- <i onclick="mostrarDetalle('${nota.id}')" class="fas fa-search boton-buscar mx-1"
+                                data-bs-toggle="modal" data-bs-target="#modalDetalle"></i>
+                            <i onclick="cargarModalEditar('${nota.id}')" class="fas fa-edit boton-editar mx-1"
+                                data-bs-toggle="modal" data-bs-target="#modalEditar"></i>
+                            <i onclick="eliminarNota('${nota.id}')" class="fas fa-trash-alt boton-borrar mx-1"></i> -->
+                            <i class="fas fa-search boton-buscar mx-1"></i>
+                            <i class="fas fa-edit boton-editar mx-1"></i>
+                            <i class="fas fa-trash-alt boton-borrar mx-1"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>empleado</td>
+                        <td>Empleadito</td>
+                        <td>empleado@gmail.com</td>
+                        <td>Empleado</td>
+                        <td>
+                            <!-- <i onclick="mostrarDetalle('${nota.id}')" class="fas fa-search boton-buscar mx-1"
+                                data-bs-toggle="modal" data-bs-target="#modalDetalle"></i>
+                            <i onclick="cargarModalEditar('${nota.id}')" class="fas fa-edit boton-editar mx-1"
+                                data-bs-toggle="modal" data-bs-target="#modalEditar"></i>
+                            <i onclick="eliminarNota('${nota.id}')" class="fas fa-trash-alt boton-borrar mx-1"></i> -->
+                            <i class="fas fa-search boton-buscar mx-1"></i>
+                            <i class="fas fa-edit boton-editar mx-1"></i>
+                            <i class="fas fa-trash-alt boton-borrar mx-1"></i>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
     </section>
     <section>
 

@@ -38,13 +38,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="./admin-usuarios.html">Usuarios</a>
+                        <a class="nav-link "  href="./admin-usuarios.html">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active " href="./admin-productos.html">Productos</a>
+                        <a class="nav-link active " aria-current="page" href="./admin-productos.html">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ventas?</a>
+                        <a class="nav-link" href="#">Ventas</a>
                     </li>
                 </ul>
             </div>
@@ -59,7 +59,7 @@
             <form class="formulario" id="formulario">
                 <h1 class="text-center mt-3" id="titulo">Alta de Productos</h1>
                 <div class="mx-5 my-3">
-                    <label for="inputCategoria">Categoria</label>
+                    <label for="inputCategoria">Categoria:</label>
                     <select id="inputCategoria" required>
                         <option>Cemento</option>
                         <option>Aceros</option>
@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 <div class="mx-5 my-3">
-                    <label for="inputUnidad">Unidad de Venta</label>
+                    <label for="inputUnidad">Unidad de Venta:</label>
                     <select id="inputUnidad" required>
                         <option>Piezas</option>
                         <option>Sacos</option>
@@ -120,7 +120,7 @@
                 </div>
             </form>
         </div>
-        <!-- Tabla Tareas -->
+        <!-- Tabla Productos -->
         <div class="m-auto">
             <table class="table tabla-azul">
                 <thead>
@@ -132,7 +132,6 @@
                         <th scope="col">Codigo de Fabricante</th>
                         <th scope="col">Unidad de Venta</th>
                         <th scope="col">Acciones</th>
-
                     </tr>
                 </thead>
                 <tbody id="tabla">
