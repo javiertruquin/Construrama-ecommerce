@@ -47,4 +47,8 @@
 .card .card-sm {
     min-height: 340px;
 }
-
+.logo-nosotros {
+    justify-content: center;
+    padding-left:30px ;
+    padding-right: 30px;
+}
