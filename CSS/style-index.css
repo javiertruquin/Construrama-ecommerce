@@ -3,7 +3,6 @@
     margin-right: auto;
     max-width: 93%;
 }
-
 .seccion-art-titulo hr {
     width: 120px;
     position: relative;
@@ -21,7 +20,6 @@
     padding: 8px;
     padding-bottom: 10px;
 }
-
 .hero-image {
     margin: 0;
     height: 100%;
@@ -47,4 +45,9 @@
 .card .card-sm {
     min-height: 340px;
 }
-
+.icono-color {
+    color: rgb(255, 147, 46);
+}
+/* .logo-nosotros {
+size: 50px;
+} */
