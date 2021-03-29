@@ -18,3 +18,16 @@ body{
     padding-top: 0;
     padding-bottom: 0;
 }
+
+.footer-bg{
+    background-color: rgb(198, 200, 195);
+    color: rgb(62, 69, 76);
+    height: 12rem;
+}
+
+.social-icon{
+    font-size: 1rem;
+    margin: 10px;
+    text-decoration: none;
+    color: rgb(62, 69, 76);
+}
