@@ -1,7 +1,7 @@
 body{
     background-color: white
 }
-.navbar-blanco{
+.navbar-color{
     background-color: rgb(20, 41, 103)
 }
 
@@ -9,13 +9,3 @@ body{
     color: white;
 }
 
-.logo-chico{
-    width: 50px;
-}
-
-.nav-link{
-    color: white;
-}
-.nav a{
-    text-decoration: none;
-}

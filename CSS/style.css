@@ -23,10 +23,12 @@ body{
     padding-bottom: 0;
 }
 
+/* Footer */
 .footer-bg{
     background-color: rgb(20, 41, 103);
     color: white;
-    height: 100vh;
+    height: 20vh;
+    
 }
 
 .social-icon{
@@ -34,4 +36,15 @@ body{
     margin: 10px;
     text-decoration: none;
     color: white;
+}
+
+.logo-chico{
+    width: 50px;
+}
+
+.nav-link{
+    color: white;
+}
+.nav a{
+    text-decoration: none;
 }
