@@ -9,6 +9,16 @@ body {
     font-size: 20px;
     font-weight: 500;
 }
+.menu{
+    background-color: rgb(20, 41, 103)!important;
+}
+.menu li a {
+    font-size: 20px;
+    font-weight: 500;
+}
+.dropdown-item:hover{
+color:rgb(255, 147, 46) !important;
+}
 .contenedor-log{
     background-color: rgb(20, 41, 103);
     color: white;
