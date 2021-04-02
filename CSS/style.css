@@ -45,3 +45,19 @@ body{
 .nav a{
     text-decoration: none;
 } 
+
+.imagen-table{
+    width: 400px;
+}
+
+.colum-pequeña{
+    max-width: 200px;
+}
+
+.colum-mediana{
+    max-width: 350px;
+}
+
+.colum-grande{
+    max-width: 500px;
+}

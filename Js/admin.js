@@ -5,6 +5,7 @@ const marcaInput = document.getElementById('inputMarca');
 const descripcionInput= document.getElementById('inputDescripcion');
 const imagenInput = document.getElementById('inputImagen');
 const precioInput = document.getElementById('inputPrecio');
+const cantidadInput = document.getElementById('inputCantidad');
 const codigoDeFabricanteInput = document.getElementById('inputFabricante');
 const unidadDeVentaInput = document.getElementById('inputUnidad');
 const tablaProductos = document.getElementById('tabla');
@@ -29,6 +30,7 @@ function submitFormulario(e) {
         descripcion: descripcionInput.value,
         imagen: imagenInput.value,
         precio: precioInput.value,
+        cantidad:cantidadInput.value,
         codigoDeFabricante: codigoDeFabricanteInput.value,
         unidadDeVenta: unidadDeVentaInput.value,
     };
@@ -46,17 +48,17 @@ function mostrarProductos() {
         let producto = productos[i];
         let tr =
             `<tr>
-            <td>${producto.id}</td>
-            <td>${producto.categoria}</td>
-            <td>${producto.articulo}</td>
-            <td>${producto.marca}</td>
+            <td >${producto.codigoDeFabricante}</td>
+            <td class="colum-pequeña">${producto.categoria}</td>
+            <td class="colum-pequeña">${producto.articulo}</td>
+            <td class="colum-pequeña">${producto.marca}</td>
             <td>${producto.descripcion}</td>
-            <td><img src="${producto.imagen}" alt=""></td>
-            <td>${producto.precio}</td>
-            <td>${producto.codigoDeFabricante}</td>
-            <td>${producto.unidadDeVenta}</td>
+            <td class="imagen-table"><img class="imagen-table"src="${producto.imagen}" alt=""></td>
+            <td class="colum-pequeña">$${producto.precio}</td>
+            <td class="colum-pequeña">${producto.cantidad}</td>
+            <td class="colum-pequeña">${producto.unidadDeVenta}</td>
             <td>
-            <button  onclick="mostrarProductosEnWeb('${producto.id}') " type="button" id="mostrar" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle"><i class="fas fa-upload"></i> </button>
+            <i onclick="mostrarProductosEnWeb('${producto.id}')" class="fas fa-upload boton-subir mx-1"></i>
             <i onclick="mostrarDetalle('${producto.id}')" class="fas fa-search boton-buscar mx-1"
                 data-bs-toggle="modal" data-bs-target="#modalDetalle"></i>
             <i onclick="cargarModalEditar('${producto.id}')" class="fas fa-edit boton-editar mx-1"
