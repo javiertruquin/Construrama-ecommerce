@@ -20,26 +20,31 @@
     padding: 8px;
     padding-bottom: 10px;
 }
-.hero-image {
+.banner-image {
     margin: 0;
     height: 100%;
-    background-color: #aaa;
-}
-.hero  {
+    background-size: cover;
     min-height: 400px;
     align-items: center;
     display: flex;
     position: relative;
-    background-position: center;
-    background-size: cover;
+    background-color: rgba(0,0,0, 0.5);
 }
-.hero .hero-container {
+.banner1{
+    background-position:center;
+}
+.banner2{
+    background-position: bottom;
+}
+.banner3 {
+    background-position: center;
+}
+.texto-container {
     display: flex;
     height: 100%;
     width: 100%;
-    padding-left: 24px;
-    background-color: rgba(0,0,0, 0.5);
     align-items: center;
+    justify-content: center;
     color: #fff;
 }
 .card .card-sm {
@@ -48,6 +53,4 @@
 .icono-color {
     color: rgb(255, 147, 46);
 }
-/* .logo-nosotros {
-size: 50px;
-} */
+

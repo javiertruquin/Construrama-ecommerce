@@ -1,11 +1,11 @@
 body{
-    background-color: white
+    background-color: rgb(255, 147, 46);
 }
-.navbar-color{
-    background-color: rgb(20, 41, 103)
+.navbar-blanco{
+    background-color: white;
 }
 
 .navbar-nav a{
-    color: white;
+    color: rgb(20, 41, 103);
 }
 
