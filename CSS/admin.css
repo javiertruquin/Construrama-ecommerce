@@ -1,11 +1,22 @@
 body{
-    background-color: rgb(255, 147, 46);
+    background-color:rgb(255, 147, 46) 
 }
-.navbar-blanco{
-    background-color: white;
+
+.navbar-color{
+    background-color: rgb(20, 41, 103)
 }
 
 .navbar-nav a{
-    color: rgb(20, 41, 103);
+    color: white;
 }
 
+.logo-chico{
+    width: 50px;
+}
+
+.nav-link{
+    color: white;
+}
+.nav a{
+    text-decoration: none;
+} 

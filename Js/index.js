@@ -1,71 +1,60 @@
-const altaProducto = document.getElementById('formulario');
-const categoriaInput = document.getElementById('inputCategoria');
-const articuloInput = document.getElementById('inputArticulo');
-const marcaInput = document.getElementById('inputMarca');
-const descripcionInput= document.getElementById('inputDescripcion');
-const imagenInput = document.getElementById('inputImagen');
-const precioInput = document.getElementById('inputPrecio');
-const codigoDeFabricanteInput = document.getElementById('inputFabricante');
-const unidadDeVentaInput = document.getElementById('inputUnidad');
-const tablaProductos = document.getElementById('tabla');
-let json = localStorage.getItem('productos');
-let productos = JSON.parse(json) || [];
-let productoId = '';
 
-function generarID() {
-    // Math.random should be unique because of its seeding algorithm.
-    // Convert it to base 36 (numbers + letters), and grab the first 9 characters
-    // after the decimal.
-    return '_' + Math.random().toString(36).substr(2, 9);
-}
+function mostrarProductosEnWeb() {
+    let productos = JSON.parse(localStorage.getItem('productos'));
+    const productosCard = document.getElementById('griferia');
+    const modalCard = document.getElementById('modal');
+    const productosMap = productos.map(function (producto) {
 
-function submitFormulario(e) {
-    e.preventDefault();
-    let producto = {
-        id: generarID(),
-        categoria: categoriaInput.value,
-        articulo: articuloInput.value,
-        marca: marcaInput.value,
-        descripcion: descripcionInput.value,
-        imagen: imagenInput.value,
-        precio: precioInput.value,
-        codigoDeFabricante: codigoDeFabricanteInput.value,
-        unidadDeVenta: unidadDeVentaInput.value,
-    };
-    productos.push(producto);
-    let json = JSON.stringify(productos);
-    localStorage.setItem('productos', json);
-    mostrarProductos();
-    altaProducto.reset();
-};
+        return `
+        <div class="col-sm-3 card-col p-2" >
+        <div class="card card-sm">
+            <img src="${producto.imagen}"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">$${producto.precio}</h5>
+                <p class="card-text">${producto.categoria}</p>
+                <p class="card-text">${producto.articulo} ${producto.marca}</p>
+                <button class="btn btn-secondary btn-sm"><i
+                        class="fas fa-shopping-cart"></i></button>
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#${producto.id}">
+                    Ver Más
+                </button>
+
+                <div class="modal fade" id="${producto.id}" data-bs-backdrop="static"
+                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Descripción</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>${producto.descripcion}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Understood</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>     
+            
+        `;
+    });
+
+    productosCard.innerHTML = productosMap.join('');
+    modalCard.innerHTML = productosMap.join('');
 
 
-function mostrarProductos() {
-    let filas = [];
-    for (let i = 0; i < productos.length; i++) {
-        let producto = productos[i];
-        let tr =
-            `<tr>
-            <td>${producto.id}</td>
-            <td>${producto.categoria}</td>
-            <td>${producto.articulo}</td>
-            <td>${producto.marca}</td>
-            <td>${producto.descripcion}</td>
-            <td><img src="${producto.imagen}" alt=""></td>
-            <td>${producto.precio}</td>
-            <td>${producto.codigoDeFabricante}</td>
-            <td>${producto.unidadDeVenta}</td>
-            <td>
-            <button  onclick="mostrarProductosEnWeb('${producto.id}') " type="button" id="mostrar" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle"><i class="fas fa-upload"></i> </button>
-
-            </td>
-        </tr>`;
-        filas.push(tr);
-    }
-    tablaProductos.innerHTML = filas.join('');
 }
 
 
-mostrarProductos();
-altaProducto.onsubmit = submitFormulario;
-
+mostrarProductosEnWeb()
+tablaProductos.onsubmit = submitFormulario;
