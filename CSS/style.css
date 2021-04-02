@@ -1,20 +1,50 @@
 body{   
     font-family: 'Open Sans', sans-serif;
+    
 }
 
+.formulario{
+    background-color: rgb(255, 147, 46);
+}
 .btn-primary {
     color: #fff;
-    background-color: rgb(20, 41, 103);;
-    border-color: rgb(20, 41, 103);;
+    background-color: rgb(20, 41, 103);
+    border-color: rgb(20, 41, 103);
 }
 .tabla-azul{
-    color: white;
-    background-color: rgb(20, 41, 103);
+    color: black;
+    background-color: rgb(255, 147, 46);
     
 }
 
 .logo{
-    width: 310px;
+    width: 210px;
     padding-top: 0;
     padding-bottom: 0;
+}
+
+/* Footer */
+.footer-bg{
+    background-color: rgb(20, 41, 103);
+    color: white;
+    height: 20vh;
+    
+}
+
+.social-icon{
+    font-size: 1rem;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-chico{
+    width: 50px;
+}
+
+.nav-link{
+    color: white;
+}
+.nav a{
+    text-decoration: none;
 }
