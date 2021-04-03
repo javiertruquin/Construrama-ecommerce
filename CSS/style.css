@@ -18,7 +18,13 @@ body{
     padding-top: 0;
     padding-bottom: 0;
 }
-
+.contenedor-registro{
+    background-color: rgb(20, 41, 103);
+    color: white;
+    border-radius: 20px;
+    font-size: 1.1em;
+    border: 1px solid;
+}
 /* Footer */
 .footer-bg{
     background-color: rgb(20, 41, 103);

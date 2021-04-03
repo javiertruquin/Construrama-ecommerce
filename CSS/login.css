@@ -9,6 +9,11 @@ body {
     font-size: 20px;
     font-weight: 500;
 }
+.logo{
+    width: 210px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
 .menu{
     background-color: rgb(20, 41, 103)!important;
 }
@@ -29,6 +34,13 @@ color:rgb(255, 147, 46) !important;
     height: 320px;
     border-radius: 20px;
     font-size: 1.1em;
+}
+.contenedor-registro{
+    background-color: rgb(20, 41, 103);
+    color: white;
+    border-radius: 20px;
+    font-size: 1.1em;
+    border: 1px solid;
 }
 .label-contra{
     margin-right: 20px;
