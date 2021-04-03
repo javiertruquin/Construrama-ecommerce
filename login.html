@@ -55,9 +55,15 @@
             <li class="nav-item">
               <a class="nav-link active text-white" aria-current="page" href="#">Registrarse</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="logInNavUI">
               <a class="nav-link active text-white" aria-current="page" href="#">Log In</a>
             </li>
+            <li class="nav-item" id="navbarUI">
+
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">NOMBREUSUARIO</a>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -67,14 +73,14 @@
     <h1 class="text-center mt-2">LOG IN</h1>
     <div class="d-flex justify-content-center mt-5">
 
-      <form action="">
+      <form action="" id="loginUI">
         <div>
-          <label class="label-usuario" for="usuario">Correo electronico</label>
-          <input class="mb-3" type="email">
+          <label class="label-usuario" for="usuario">Usuario</label>
+          <input class="mb-3" type="text" id="usuarioUI" required>
         </div>
         <div class="mt-3">
           <label class="label-contra" for="contra">Contraseña</label>
-          <input class="mb-3" type="password">
+          <input class="mb-3" type="password" id="contraUI" required>
         </div>
         <div class="mt-4 ">
           <button class="btn btn-outline-light me-5">Ingresar</button>
@@ -89,6 +95,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
+    <script src="./Js/login.js"></script>
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
