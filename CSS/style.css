@@ -1,19 +1,15 @@
 body{   
     font-family: 'Open Sans', sans-serif;
-    
 }
 
-.formulario{
-    background-color: rgb(255, 147, 46);
-}
 .btn-primary {
     color: #fff;
-    background-color: rgb(20, 41, 103);
-    border-color: rgb(20, 41, 103);
+    background-color: rgb(20, 41, 103);;
+    border-color: rgb(20, 41, 103);;
 }
 .tabla-azul{
-    color: black;
-    background-color: rgb(255, 147, 46);
+    color: white;
+    background-color: rgb(20, 41, 103);
     
 }
 
@@ -27,8 +23,9 @@ body{
 .footer-bg{
     background-color: rgb(20, 41, 103);
     color: white;
+    height: 100vh;
     height: 20vh;
-    
+
 }
 
 .social-icon{
@@ -47,4 +44,20 @@ body{
 }
 .nav a{
     text-decoration: none;
+} 
+
+.imagen-table{
+    width: 400px;
+}
+
+.colum-pequeña{
+    max-width: 200px;
+}
+
+.colum-mediana{
+    max-width: 350px;
+}
+
+.colum-grande{
+    max-width: 500px;
 }

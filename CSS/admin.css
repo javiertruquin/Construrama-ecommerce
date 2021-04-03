@@ -1,6 +1,7 @@
 body{
-    background-color: white
+    background-color:rgb(255, 147, 46) 
 }
+
 .navbar-color{
     background-color: rgb(20, 41, 103)
 }
@@ -9,3 +10,32 @@ body{
     color: white;
 }
 
+.logo-chico{
+    width: 50px;
+}
+
+.nav-link{
+    color: white;
+}
+.nav a{
+    text-decoration: none;
+} 
+
+.boton-editar:hover{
+    color:yellowgreen;
+    cursor: pointer;
+}
+.boton-borrar:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.boton-buscar:hover{
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+.boton-subir:hover{
+    color: yellow;
+    cursor: pointer;
+}
