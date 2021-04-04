@@ -50,7 +50,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="#">Sobre Nosotros</a>
+              <a class="nav-link active text-white" aria-current="page" href="./index.html#sec-sobrenosotros">Sobre Nosotros</a>
             </li>
             <li class="nav-item" id="registrarseUI">
               <a class="nav-link active text-white" aria-current="page" data-bs-toggle="modal" data-bs-target="#formulario" href="">Registrarse</a>
@@ -58,9 +58,9 @@
             <li class="nav-item" id="logInNavUI">
               <a class="nav-link active text-white" aria-current="page" href="#">Log In</a>
             </li>
-            <li class="nav-item" id="navbarUI">
+            <ul class="navbar-nav" id="navbarUI">
 
-            </li>
+            </ul>
             <!-- <li class="nav-item">
               <a class="nav-link active text-white" aria-current="page" href="#">NOMBREUSUARIO</a>
             </li> -->
@@ -79,16 +79,16 @@
         </div>
         <form class="modal-body" id="registro">
             <label for="usuario" class="me-5"> Usuario </label><br>
-            <input type="text" id="inputUsuario" placeholder="Usuario" class="mt-2 mb-2"><br>
+            <input type="text" id="inputUsuario" placeholder="Usuario" class="mt-2 mb-2" required><br>
 
             <label for="Nombre y Apellido" class="mt-2 mb-2">Nombre y Apellido</label><br>
-            <input type="text" id="inputNombre" name="" placeholder="Nombre y Apellido" class="mb-2"><br>
+            <input type="text" id="inputNombre" name="" placeholder="Nombre y Apellido" class="mb-2" required><br>
 
             <label for="password" class="mt-2 mb-2">Contraseña</label><br>
-            <input type="password" id="inputPass" name="" placeholder="Contraseña" class="mb-2"><br>
+            <input type="password" id="inputPass" name="" placeholder="Contraseña" class="mb-2" required><br>
 
             <label for="password" class="mt-2 mb-2">Correo Electronico</label><br>
-            <input type="email" id="inputCorreo" name=""  placeholder="Ej:lrlichardi@hotmail.com" class="mb-2"><br>
+            <input type="email" id="inputCorreo" name=""  placeholder="Ej:lrlichardi@hotmail.com" class="mb-2" required><br>
 
                   
         <label for="" class="cajacheck ms-2 mb-2 mt-3"><input type="checkbox" class="me-1 ms-1 ">Acepto<a style="font-size: 15px;" href="">Terminos y condiciones</a></label>
@@ -99,9 +99,9 @@
       </div>
     </div>
   </div>
-  <div class="contenedor-log">
-    <h1 class="text-center mt-2">LOG IN</h1>
-    <div class="d-flex justify-content-center mt-5">
+  <div class="contenedor-log container-fluid">
+    <h1 class="text-center pt-3">LOG IN</h1>
+    <div class="d-flex justify-content-center mt-4">
 
       <form action="" id="loginUI">
         <div>
@@ -114,7 +114,7 @@
         </div>
         <div class="mt-4 ">
           <button class="btn btn-outline-light me-5">Ingresar</button>
-          <button class="btn btn-outline-light">Registrarse</button>
+          <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#formulario" type="button">Registrarse</button>
         </div>
     </div>
   </div>

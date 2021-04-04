@@ -29,14 +29,17 @@ function validarUsuarioSubmit(e) {
         let userLog = [];
         if (usuarioValido.rol === 'Administrador') {
             let logUsuario = `
-         <a class="nav-link active text-white" aria-current="page" href="./admin-productos.html">Modificar Productos</a>
-         <li><a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a></li
+         <li><a class="nav-link active text-white" aria-current="page" href="./admin-productos.html">Modificar Productos</a></li>
+         <li><a class="nav-link active text-white" aria-current="page" href="./admin-usuarios.html">Modificar Usuarios</a></li>
+         <li><a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a></li>
+         <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
                     `;
             userLog.push(logUsuario);
-        }
+                    }
         else {
             let logUsuario = `
          <a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a>
+         <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
                     `;
             userLog.push(logUsuario);
         }
@@ -49,6 +52,10 @@ function validarUsuarioSubmit(e) {
     else {
         alert("Usuario o contraseña no coinciden");
     }
+    const close = document.getElementById('closeUI');
+    close.addEventListener('click' , function(){
+        location.href='index.html'
+    })
 }
 
 formularioForm.onsubmit = function (e) {
@@ -69,5 +76,7 @@ formularioForm.onsubmit = function (e) {
      modal.hide();
     formularioForm.reset(); // reset limpia los campos del formulario.
 };
+
+
 
 login.onsubmit = validarUsuarioSubmit;

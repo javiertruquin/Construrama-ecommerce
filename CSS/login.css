@@ -48,3 +48,13 @@ color:rgb(255, 147, 46) !important;
 .label-usuario{
     margin-right: 50px;
 }
+@media only screen and (max-width: 505px) {
+   
+    .contenedor-log{
+        font-size: 0.9em;
+        width: auto;
+    }
+    .label-usuario {
+        margin-right: 45px;
+    }
+}
