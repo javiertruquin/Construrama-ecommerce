@@ -23,78 +23,83 @@
 <body>
     <nav>
         <nav class="navbar navbar-expand-lg navbar-light barra ">
-          <div class="container-fluid">
-            <a class="navbar-brand m-0" href="#">
-              <img src="./Imagenes/CONSTRURAMA-AZUL2.png" class="logo mx-2" alt="" width="150" height="70">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Productos </a>
-                  <ul class="dropdown-menu menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item text-white" href="#">Griferia</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Porcelanato</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Sanitario</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active text-white" aria-current="page" href="#sec-sobrenosotros">Sobre Nosotros</a>
-                </li>
-                <li class="nav-item" id="registrarseUI">
-                  <a class="nav-link active text-white" aria-current="page" data-bs-toggle="modal" data-bs-target="#formulario" href="">Registrarse</a>
+            <div class="container-fluid">
+                <a class="navbar-brand m-0" href="./index.html">
+                    <img src="./Imagenes/CONSTRURAMA-AZUL2.png" class="logo mx-2" alt="" width="150" height="70">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Productos </a>
+                            <ul class="dropdown-menu menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item text-white" href="#sec-griferia">Griferia</a></li>
+                                <li><a class="dropdown-item text-white" href="#sec-porcelanato">Porcelanato</a></li>
+                                <li><a class="dropdown-item text-white" href="#sec-sanitarios">Sanitario</a></li>
+                            </ul>
                         </li>
-                <li class="nav-item" id="logInNavUI">
-                  <a class="nav-link active text-white" aria-current="page" href="./login.html">Log In</a>
-                </li>
-                <ul class="navbar-nav" id="navbarUI">
-    
-                </ul>
-                <!-- <li class="nav-item">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#sec-sobrenosotros">Sobre
+                                Nosotros</a>
+                        </li>
+                        <li class="nav-item" id="registrarseUI">
+                            <a class="nav-link active text-white" aria-current="page" data-bs-toggle="modal"
+                                data-bs-target="#formulario" href="">Registrarse</a>
+                        </li>
+                        <li class="nav-item" id="logInNavUI">
+                            <a class="nav-link active text-white" aria-current="page" href="./login.html">Log In</a>
+                        </li>
+                        <ul class="navbar-nav" id="navbarUI">
+
+                        </ul>
+                        <!-- <li class="nav-item">
                   <a class="nav-link active text-white" aria-current="page" href="#">NOMBREUSUARIO</a>
                 </li> -->
-              </ul>
+                    </ul>
+                </div>
             </div>
-          </div>
         </nav>
-      </nav>
- <!-- MODAL SIGN UP -->
- <div id="formulario" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content contenedor-registro text-white">
-        <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalLabel"><span>Sign Up</span></h4>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+    </nav>
+    <!-- MODAL SIGN UP -->
+    <div id="formulario" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content contenedor-registro text-white">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel"><span>Sign Up</span></h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <form class="modal-body" id="registro">
+                    <label for="usuario" class="me-5"> Usuario </label><br>
+                    <input type="text" id="inputUsuario" placeholder="Usuario" class="mt-2 mb-2"><br>
+
+                    <label for="Nombre y Apellido" class="mt-2 mb-2">Nombre y Apellido</label><br>
+                    <input type="text" id="inputNombre" name="" placeholder="Nombre y Apellido" class="mb-2"><br>
+
+                    <label for="password" class="mt-2 mb-2">Contraseña</label><br>
+                    <input type="password" id="inputPass" name="" placeholder="Contraseña" class="mb-2"><br>
+
+                    <label for="password" class="mt-2 mb-2">Correo Electronico</label><br>
+                    <input type="email" id="inputCorreo" name="" placeholder="Ej:lrlichardi@hotmail.com"
+                        class="mb-2"><br>
+
+
+                    <label for="" class="cajacheck ms-2 mb-2 mt-3"><input type="checkbox" class="me-1 ms-1 ">Acepto<a
+                            style="font-size: 15px;" href="">Terminos y condiciones</a></label>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-outline-light">Confirmar</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <form class="modal-body" id="registro">
-            <label for="usuario" class="me-5"> Usuario </label><br>
-            <input type="text" id="inputUsuario" placeholder="Usuario" class="mt-2 mb-2"><br>
-
-            <label for="Nombre y Apellido" class="mt-2 mb-2">Nombre y Apellido</label><br>
-            <input type="text" id="inputNombre" name="" placeholder="Nombre y Apellido" class="mb-2"><br>
-
-            <label for="password" class="mt-2 mb-2">Contraseña</label><br>
-            <input type="password" id="inputPass" name="" placeholder="Contraseña" class="mb-2"><br>
-
-            <label for="password" class="mt-2 mb-2">Correo Electronico</label><br>
-            <input type="email" id="inputCorreo" name=""  placeholder="Ej:lrlichardi@hotmail.com" class="mb-2"><br>
-
-                  
-        <label for="" class="cajacheck ms-2 mb-2 mt-3"><input type="checkbox" class="me-1 ms-1 ">Acepto<a style="font-size: 15px;" href="">Terminos y condiciones</a></label>
-        <div class="modal-footer">
-            <button type="submit" class="btn btn-outline-light">Confirmar</button>
-        </div>
-      </form>
-      </div>
     </div>
-  </div>
     <header>
-<div id="loginUI" class="d-none"></div>
+        <div id="loginUI" class="d-none"></div>
 
         <div class="row" id="">
             <div class="col-lg-7 p-0">
@@ -767,7 +772,58 @@
             </div>
         </div>
     </section>
+    <section>
+        <div class="container">
+            <div class="row" id="sanitario">
 
+
+
+                <!-- <div class="col-sm-2 col-sm-4 card-col p-2">
+                    <div class="card card-sm">
+                        <img src="https://foschia.com.ar/static/uploads/products/webp/imIqk4qF2eygJQUGAHuPjbIR38nb78HKnmToj-bn6IpHNSkmbzIsmLt6KlYStQnCEsMJASiH3-As_LI8QZ5PTa2DX7SPwSRb_smsq.webp?x=1600704300"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">$ 23.917</h5>
+                            <p class="card-text">Grifería Lavatorio Hidromet Monoc Storm...</p>
+                            <button class="btn btn-secondary btn-sm"><i
+                                    class="fas fa-shopping-cart"></i></button>
+                            
+                            <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">
+                                Ver Más
+                            </button> -->
+
+
+                <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <!-- <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Understood</button>
+                                        </div>
+                                    </div>
+                                </div>  -->
+                </div>
+                <!-- </div>
+                    </div>
+                </div> -->
+
+
+
+
+            </div>
+        </div>
+    </section>
 
 
 
