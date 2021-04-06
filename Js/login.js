@@ -11,10 +11,10 @@ const nombreInput = document.getElementById('inputNombre');
 const correoInput = document.getElementById('inputCorreo');
 const passInput = document.getElementById('inputPass');
 // CONVERSION DE STRING A ARRAY Y AL REVES
-const json = localStorage.getItem('usuarios');
-let usuarios = JSON.parse(json) || [];
+let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 let usuarioId = "";
-
+let sesionIniciada = [];
+let userLog = [];
 function generarID() {
 
     return '_' + Math.random().toString(36).substr(2, 9);
@@ -23,10 +23,8 @@ function generarID() {
 function validarUsuarioSubmit(e) {
     e.preventDefault();
     const usuarioValido = usuarios.find((lUsuario) => lUsuario.usuario === usuario.value && lUsuario.pass === contra.value);
-    console.log(usuarioValido);
     if (usuarioValido) {
         alert("Bienvenido " + usuarioValido.nombre);
-        let userLog = [];
         if (usuarioValido.rol === 'Administrador') {
             let logUsuario = `
          <li><a class="nav-link active text-white" aria-current="page" href="./admin-productos.html">Modificar Productos</a></li>
@@ -35,27 +33,28 @@ function validarUsuarioSubmit(e) {
          <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
                     `;
             userLog.push(logUsuario);
-                    }
+            sesionIniciada.push(usuarioValido);
+            sessionStorage.setItem('sesion', JSON.stringify(sesionIniciada));
+            sessionStorage.setItem('log', JSON.stringify(userLog));
+        }
         else {
             let logUsuario = `
          <a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a>
          <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
                     `;
             userLog.push(logUsuario);
+            sessionStorage.setItem('log', JSON.stringify(userLog));
         }
-        console.log(userLog);
         logInNav.style.display = "none";
         registrarse.style.display = "none";
         navbar.innerHTML = userLog.join('');
-        // window.location="index.html";
+        verificaSesion();
+        window.location="index.html";
     }
     else {
         alert("Usuario o contraseña no coinciden");
     }
-    const close = document.getElementById('closeUI');
-    close.addEventListener('click' , function(){
-        location.href='index.html'
-    })
+    closeSesion();
 }
 
 formularioForm.onsubmit = function (e) {
@@ -73,10 +72,27 @@ formularioForm.onsubmit = function (e) {
     localStorage.setItem('usuarios', json);
     const myModal = document.getElementById('formulario')
     const modal = bootstrap.Modal.getInstance(myModal);
-     modal.hide();
+    modal.hide();
     formularioForm.reset(); // reset limpia los campos del formulario.
 };
 
-
-
+function verificaSesion() {
+    console.log(sessionStorage.getItem('sesion'));
+    if (sessionStorage.getItem('sesion') === null) {  }
+    else {
+        logInNav.style.display = "none";
+        registrarse.style.display = "none";
+        let log = JSON.parse(sessionStorage.getItem('log')) || [];
+        navbar.innerHTML = log.join('');
+    }
+   closeSesion();
+}
+function closeSesion () {
+    const close = document.getElementById('closeUI');
+    close.addEventListener('click', function () {
+        location.href = 'index.html'
+        sessionStorage.removeItem('sesion');
+    })
+}
 login.onsubmit = validarUsuarioSubmit;
+verificaSesion();
