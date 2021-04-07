@@ -27,10 +27,10 @@ function validarUsuarioSubmit(e) {
         alert("Bienvenido " + usuarioValido.nombre);
         if (usuarioValido.rol === 'Administrador') {
             let logUsuario = `
-         <li><a class="nav-link active text-white" aria-current="page" href="./admin-productos.html">Modificar Productos</a></li>
-         <li><a class="nav-link active text-white" aria-current="page" href="./admin-usuarios.html">Modificar Usuarios</a></li>
-         <li><a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a></li>
-         <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
+        <li><a class="nav-link active text-white" aria-current="page" href="./admin-productos.html">Modificar Productos</a></li>
+        <li><a class="nav-link active text-white" aria-current="page" href="./admin-usuarios.html">Modificar Usuarios</a></li>
+        <li><a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a></li>
+        <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
                     `;
             userLog.push(logUsuario);
             sesionIniciada.push(usuarioValido);
