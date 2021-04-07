@@ -37,13 +37,26 @@ function validarUsuarioSubmit(e) {
             sessionStorage.setItem('sesion', JSON.stringify(sesionIniciada));
             sessionStorage.setItem('log', JSON.stringify(userLog));
         }
+        else if (usuarioValido.rol === 'Empleado') {
+            let logUsuario = `
+        <li><a class="nav-link active text-white" aria-current="page" href="./admin-productos.html">Modificar Productos</a></li>
+        <li><a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a></li>
+         <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
+                    `;
+                    userLog.push(logUsuario);
+                    sesionIniciada.push(usuarioValido);
+                    sessionStorage.setItem('sesion', JSON.stringify(sesionIniciada));
+                    sessionStorage.setItem('log', JSON.stringify(userLog));
+        }
         else {
             let logUsuario = `
          <a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a>
          <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
                     `;
-            userLog.push(logUsuario);
-            sessionStorage.setItem('log', JSON.stringify(userLog));
+                    userLog.push(logUsuario);
+                    sesionIniciada.push(usuarioValido);
+                    sessionStorage.setItem('sesion', JSON.stringify(sesionIniciada));
+                    sessionStorage.setItem('log', JSON.stringify(userLog));
         }
         logInNav.style.display = "none";
         registrarse.style.display = "none";
@@ -73,6 +86,7 @@ formularioForm.onsubmit = function (e) {
     const myModal = document.getElementById('formulario')
     const modal = bootstrap.Modal.getInstance(myModal);
     modal.hide();
+    alert("Bienvenido a Construrama " + usuarioValido.nombre + "se registro exitosamente");
     formularioForm.reset(); // reset limpia los campos del formulario.
 };
 
