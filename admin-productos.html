@@ -55,8 +55,8 @@
             <form class="formulario" id="formulario">
                 <h1 class="text-center mt-3" id="titulo">Alta de Productos</h1>
                 <div class="mx-5 my-3">
-                    <label for="inputCategoria">Categoria:</label>
-                    <select id="inputCategoria" required>
+                    <label class="form-label" for="inputCategoria">Categoria:</label>
+                    <select class="form-select" id="inputCategoria" required>
                         <option>Griferías</option>
                         <option>Porcelanatos</option>
                         <option>Sanitarios</option>
@@ -65,31 +65,31 @@
                 </div>
                 <div class="mx-5 mt-2 mb-3">
                     <div class="">
-                        <label class="" for="inputFabricante">Código de fabricante</label>
+                        <label class="form-label" for="inputFabricante">Código de fabricante</label>
                     </div>
                     <div class="">
-                        <input class="w-100" type="text" id="inputFabricante" required>
-                    </div>
-                </div>
-                <div class="mx-5 mt-2 mb-3">
-                    <div class="">
-                        <label class="" for="inputArticulo">Articulo</label>
-                    </div>
-                    <div class="">
-                        <input class="w-100" type="text" id="inputArticulo" required>
+                        <input class="form-control w-100" type="text" id="inputFabricante" required>
                     </div>
                 </div>
                 <div class="mx-5 mt-2 mb-3">
                     <div class="">
-                        <label class="" for="inputMarca">Marca</label>
+                        <label class="form-label" for="inputArticulo">Articulo</label>
                     </div>
                     <div class="">
-                        <input class="w-100" type="text" id="inputMarca" required>
+                        <input class="form-control w-100" type="text" id="inputArticulo" required>
                     </div>
                 </div>
                 <div class="mx-5 mt-2 mb-3">
                     <div class="">
-                        <label class="" for="inputDescripcion">Descripción</label>
+                        <label class="form-label" for="inputMarca">Marca</label>
+                    </div>
+                    <div class="">
+                        <input class="form-control w-100" type="text" id="inputMarca" required>
+                    </div>
+                </div>
+                <div class="mx-5 mt-2 mb-3">
+                    <div class="">
+                        <label class="form-label" for="inputDescripcion">Descripción</label>
                     </div>
                     <div class="">
                         <textarea class="w-100" type="text" id="inputDescripcion" required></textarea>
@@ -97,32 +97,32 @@
                 </div>
                 <div class="mx-5 mt-2 mb-3">
                     <div class="">
-                        <label class="" for="inputImagen">URL de Imagen</label>
+                        <label class="form-label" for="inputImagen">URL de Imagen</label>
                     </div>
                     <div class="">
-                        <input class="w-100" type="text" id="inputImagen">
-                    </div>
-                </div>
-                <div class="mx-5 mt-2 mb-3">
-                    <div class="">
-                        <label class="" for="inputPrecio">Precio $</label>
-                    </div>
-                    <div class="">
-                        <input class="w-100" type="number" id="inputPrecio" required>
+                        <input class="form-control w-100" type="text" id="inputImagen">
                     </div>
                 </div>
                 <div class="mx-5 mt-2 mb-3">
                     <div class="">
-                        <label class="" for="inputCantidad">Cantidad</label>
+                        <label class="form-label" for="inputPrecio">Precio $</label>
                     </div>
                     <div class="">
-                        <input class="w-100" type="number" id="inputCantidad" required>
+                        <input class="form-control w-100" type="number" id="inputPrecio" required>
+                    </div>
+                </div>
+                <div class="mx-5 mt-2 mb-3">
+                    <div class="">
+                        <label class="form-label" for="inputCantidad">Cantidad</label>
+                    </div>
+                    <div class="">
+                        <input class="form-control w-100" type="number" id="inputCantidad" required>
                     </div>
                 </div>
 
                 <div class="mx-5 my-3">
-                    <label for="inputUnidad">Unidad de Venta:</label>
-                    <select id="inputUnidad" required>
+                    <label class="form-label" for="inputUnidad">Unidad de Venta:</label>
+                    <select class="form-select" id="inputUnidad" required>
                         <option>Piezas</option>
                         <option>Metros lineales</option>
                         <option>Kilos</option>
@@ -229,8 +229,8 @@
                 <form id="formularioEditar">
                     <div id="" class="modal-body">
                         <div class="mx-5 my-3">
-                            <label for="editarCategoria">Categoria:</label>
-                            <select id="editarCategoria" required>
+                            <label class="form-label" for="editarCategoria">Categoria:</label>
+                            <select class="form-select" id="editarCategoria" required>
                                 <option>Griferías</option>
                                 <option>Porcelanatos</option>
                                 <option>Sanitarios</option>
@@ -239,31 +239,31 @@
                         </div>
                         <div class="mx-5 mt-2 mb-3">
                             <div class="">
-                                <label class="" for="editarFabricante">Código de fabricante</label>
+                                <label class="form-label" for="editarFabricante">Código de fabricante</label>
                             </div>
                             <div class="">
-                                <input class="w-100" type="text" id="editarFabricante" required>
-                            </div>
-                        </div>
-                        <div class="mx-5 mt-2 mb-3">
-                            <div class="">
-                                <label class="" for="editarArticulo">Articulo</label>
-                            </div>
-                            <div class="">
-                                <input class="w-100" type="text" id="editarArticulo" required>
+                                <input class="form-control w-100" type="text" id="editarFabricante" required>
                             </div>
                         </div>
                         <div class="mx-5 mt-2 mb-3">
                             <div class="">
-                                <label class="" for="editarMarca">Marca</label>
+                                <label class="form-label" for="editarArticulo">Articulo</label>
                             </div>
                             <div class="">
-                                <input class="w-100" type="text" id="editarMarca" required>
+                                <input class="form-control w-100" type="text" id="editarArticulo" required>
                             </div>
                         </div>
                         <div class="mx-5 mt-2 mb-3">
                             <div class="">
-                                <label class="" for="editarDescripcion">Descripción</label>
+                                <label class="form-label" for="editarMarca">Marca</label>
+                            </div>
+                            <div class="">
+                                <input class="form-control w-100" type="text" id="editarMarca" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="form-label" for="editarDescripcion">Descripción</label>
                             </div>
                             <div class="">
                                 <textarea class="w-100" type="text" id="editarDescripcion" required></textarea>
@@ -271,32 +271,32 @@
                         </div>
                         <div class="mx-5 mt-2 mb-3">
                             <div class="">
-                                <label class="" for="editarImagen">URL de Imagen</label>
+                                <label class="form-label" for="editarImagen">URL de Imagen</label>
                             </div>
                             <div class="">
-                                <input class="w-100" type="text" id="editarImagen">
-                            </div>
-                        </div>
-                        <div class="mx-5 mt-2 mb-3">
-                            <div class="">
-                                <label class="" for="editarPrecio">Precio $</label>
-                            </div>
-                            <div class="">
-                                <input class="w-100" type="number" id="editarPrecio" required>
+                                <input class="form-control w-100" type="text" id="editarImagen">
                             </div>
                         </div>
                         <div class="mx-5 mt-2 mb-3">
                             <div class="">
-                                <label class="" for="editarCantidad">Cantidad</label>
+                                <label class="form-label" for="editarPrecio">Precio $</label>
                             </div>
                             <div class="">
-                                <input class="w-100" type="number" id="editarCantidad" required>
+                                <input class="form-control w-100" type="number" id="editarPrecio" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="form-label" for="editarCantidad">Cantidad</label>
+                            </div>
+                            <div class="">
+                                <input class="form-control w-100" type="number" id="editarCantidad" required>
                             </div>
                         </div>
         
                         <div class="mx-5 my-3">
-                            <label for="editarUnidad">Unidad de Venta:</label>
-                            <select id="editarUnidad" required>
+                            <label class="form-label" for="editarUnidad">Unidad de Venta:</label>
+                            <select class="form-select" id="editarUnidad" required>
                                 <option>Piezas</option>
                                 <option>Metros lineales</option>
                                 <option>Kilos</option>
