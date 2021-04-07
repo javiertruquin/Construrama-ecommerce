@@ -9,6 +9,16 @@ const cantidadInput = document.getElementById('inputCantidad');
 const codigoDeFabricanteInput = document.getElementById('inputFabricante');
 const unidadDeVentaInput = document.getElementById('inputUnidad');
 const tablaProductos = document.getElementById('tabla');
+const editarForm = document.getElementById("formularioEditar");
+const editarCategoriaInput = document.getElementById("editarCategoria");
+const editarArticuloInput = document.getElementById("editarArticulo");
+const editarMarcaInput = document.getElementById("editarMarca");
+const editarDescripcionInput = document.getElementById("editarDescripcion");
+const editarImagenInput = document.getElementById("editarImagen");
+const editarPrecioInput = document.getElementById("editarPrecio");
+const editarCantidadInput = document.getElementById("editarCantidad");
+const editarCodigoDeFabricanteInput = document.getElementById("editarFabricante");
+const editarUnidadInput = document.getElementById("editarUnidad");
 let json = localStorage.getItem('productos');
 let productos = JSON.parse(json) || [];
 let productoId = '';
@@ -91,3 +101,56 @@ function eliminarProducto(id) {
     productos = productosFiltradas;
     mostrarProductos();
 }
+
+// function mostrarDetalle(id) {
+//     const notaEncontrada = notas.find((nota) => nota.id === id);
+//     console.log("mostrarDetalle ~ notaEncontrada", notaEncontrada)
+//     const detalleDiv = document.getElementById("detalleNota");
+//     const detalleNota = `
+//     <p>Titulo: ${notaEncontrada.titulo}</p>
+//     <p>Detalle: ${notaEncontrada.contenido}</p>
+//     <p>Prioridad: ${notaEncontrada.categoria}</p>
+//     `;
+//     detalleDiv.innerHTML = detalleNota;
+// }
+
+function cargarModalEditar(id) {
+    const productoEncontrado = productos.find((producto) => producto.id === id);
+    editarCategoriaInput.value = productoEncontrado.categoria;
+    editarArticuloInput.value = productoEncontrado.articulo;
+    editarMarcaInput.value = productoEncontrado.marca;
+    editarDescripcionInput.value = productoEncontrado.descripcion;
+    editarImagenInput.value = productoEncontrado.imagen;
+    editarPrecioInput.value = productoEncontrado.precio;
+    editarCantidadInput.value = productoEncontrado.cantidad;
+    editarCodigoDeFabricanteInput.value = productoEncontrado.codigoDeFabricante;
+    editarUnidadInput.value = productoEncontrado.unidadDeVenta;
+    productoId = productoEncontrado.id;
+}
+
+// editarForm.onsubmit = function (e) {
+//     e.preventDefault();
+
+//     const notasModificadas = notas.map((nota) => {
+//         if (nota.id === notaId) {
+//             const notasModificadas = {
+//                 ...nota,
+//                 titulo: editarTituloInput.value,
+//                 contenido: editarContenidoInput.value,
+//                 categoria: editarCategoriaInput.value,
+//             };
+//             return notasModificadas;
+//         } else {
+//             return nota;
+//         }
+//     });
+
+//     const json = JSON.stringify(notasModificadas);
+//     localStorage.setItem("notas", json);
+//     notas = notasModificadas;
+//     mostrarnotas();
+//     const myModal = document.getElementById('modalEditar')
+//     const modal = bootstrap.Modal.getInstance(myModal);
+//     modal.hide();
+//     formularioForm.reset();
+// };

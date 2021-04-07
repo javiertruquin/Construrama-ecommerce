@@ -5,10 +5,12 @@ const correoInput = document.getElementById('inputCorreo');
 const passInput = document.getElementById('inputPass');
 const rolInput = document.getElementById('inputRol');
 const usuariosTable = document.getElementById('tabla')
-// const editarForm = document.getElementById("formularioEditar");
-// const editarTituloInput = document.getElementById("editarTitulo");
-// const editarContenidoInput = document.getElementById("editarContenido");
-// const editarCategoriaInput = document.getElementById("editarCategoria");
+const editarForm = document.getElementById("formularioEditar");
+const editarUsuarioInput = document.getElementById("editarUsuario");
+const editarNombreInput = document.getElementById("editarNombre");
+const editarCorreoInput = document.getElementById("editarCorreo");
+const editarPassInput = document.getElementById("editarPass");
+const editarRolInput = document.getElementById("editarRol");
 const json = localStorage.getItem('usuarios'); 
 let usuarios = JSON.parse(json) || []; 
 let usuarioId = "";
@@ -79,48 +81,53 @@ function eliminarUsuario(id) {
 }
 
 // function mostrarDetalle(id) {
-//     const notaEncontrada = notas.find((nota) => nota.id === id);
-//     console.log("mostrarDetalle ~ notaEncontrada", notaEncontrada)
-//     const detalleDiv = document.getElementById("detalleNota");
-//     const detalleNota = `
-//     <p>Titulo: ${notaEncontrada.titulo}</p>
-//     <p>Detalle: ${notaEncontrada.contenido}</p>
-//     <p>Prioridad: ${notaEncontrada.categoria}</p>
+//     const usuarioEncontrado = usuarios.find((usuario) => usuario.id === id);
+//     const detalleDiv = document.getElementById("detalleUsuario");
+//     const detalleUsuario = `
+//     <p>Usuario: ${usuarioEncontrado.usuario}</p>
+//     <p>Correo: ${usuarioEncontrado.correo}</p>
+//     <p>Rol: ${usuarioEncontrado.rol}</p>
 //     `;
-//     detalleDiv.innerHTML = detalleNota;
+//     detalleDiv.innerHTML = detalleUsuario;
 // }
 
-// function cargarModalEditar(id) {
-//     const notaEncontrada = notas.find((nota) => nota.id === id);
-//     editarTituloInput.value = notaEncontrada.titulo;
-//     editarContenidoInput.value = notaEncontrada.contenido;
-//     editarCategoriaInput.value = notaEncontrada.categoria;
-//     notaId = notaEncontrada.id;
-// }
+function cargarModalEditar(id) {
+    const usuarioEncontrado = usuarios.find((usuario) => usuario.id === id);
+    console.log("cargarModalEditar ~ usuarioEncontrado", usuarioEncontrado)
+    editarUsuarioInput.value = usuarioEncontrado.usuario;
+    editarNombreInput.value = usuarioEncontrado.nombre;
+    editarCorreoInput.value = usuarioEncontrado.correo;
+    editarPassInput.value = usuarioEncontrado.pass;
+    editarRolInput.value =usuarioEncontrado.rol;
+    usuarioId = usuarioEncontrado.id;
+}
 
-// editarForm.onsubmit = function (e) {
-//     e.preventDefault();
+editarForm.onsubmit = function (e) {
+    e.preventDefault();
 
-//     const notasModificadas = notas.map((nota) => {
-//         if (nota.id === notaId) {
-//             const notasModificadas = {
-//                 ...nota,
-//                 titulo: editarTituloInput.value,
-//                 contenido: editarContenidoInput.value,
-//                 categoria: editarCategoriaInput.value,
-//             };
-//             return notasModificadas;
-//         } else {
-//             return nota;
-//         }
-//     });
+    const usuariosModificados = usuarios.map((usuario) => {
+        if (usuario.id === usuarioId) {
+            const usuariosModificados = {
+                ...usuario,
+                usuario: editarUsuarioInput.value,
+                nombre: editarNombreInput.value,
+                coreo: editarCorreoInput.value,
+                pass: editarPassInput.value,
+                rol: editarRolInput.value,
 
-//     const json = JSON.stringify(notasModificadas);
-//     localStorage.setItem("notas", json);
-//     notas = notasModificadas;
-//     mostrarnotas();
-//     const myModal = document.getElementById('modalEditar')
-//     const modal = bootstrap.Modal.getInstance(myModal);
-//     modal.hide();
-//     formularioForm.reset();
-// };
+            };
+            return usuariosModificados;
+        } else {
+            return usuario;
+        }
+    });
+
+    const json = JSON.stringify(usuariosModificados);
+    localStorage.setItem("usuarios", json);
+    usuarios = usuariosModificados;
+    mostrarUsuarios();
+    const myModal = document.getElementById('modalEditar')
+    const modal = bootstrap.Modal.getInstance(myModal);
+    modal.hide();
+    formularioForm.reset();
+};

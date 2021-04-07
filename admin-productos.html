@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="CSS/admin.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="shortcut icon" href="Imagenes/Imagenes Caro/Favicon-fondo-transparente.png" type="image/x-icon">
-    
+
 
 
 
@@ -40,7 +40,8 @@
             </button>
             <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li><a class="nav-link active text-white" aria-current="page" href="./admin-usuarios.html">Modificar Usuarios</a></li>
+                    <li><a class="nav-link active text-white" aria-current="page" href="./admin-usuarios.html">Modificar
+                            Usuarios</a></li>
                 </ul>
             </div>
         </div>
@@ -118,7 +119,7 @@
                         <input class="w-100" type="number" id="inputCantidad" required>
                     </div>
                 </div>
-                
+
                 <div class="mx-5 my-3">
                     <label for="inputUnidad">Unidad de Venta:</label>
                     <select id="inputUnidad" required>
@@ -208,7 +209,7 @@
                         <li class="nav-link">Políticas de devolucion</li>
                     </a>
                     <a href="#">
-                        
+
                         <li class="nav-link">Términos generales de uso</li>
                     </a>
                 </ul>
@@ -216,6 +217,101 @@
 
         </div>
     </footer>
+
+    <!-- modal -->
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="formularioEditar">
+                    <div id="" class="modal-body">
+                        <div class="mx-5 my-3">
+                            <label for="editarCategoria">Categoria:</label>
+                            <select id="editarCategoria" required>
+                                <option>Griferías</option>
+                                <option>Porcelanatos</option>
+                                <option>Sanitarios</option>
+        
+                            </select>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="" for="editarFabricante">Código de fabricante</label>
+                            </div>
+                            <div class="">
+                                <input class="w-100" type="text" id="editarFabricante" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="" for="editarArticulo">Articulo</label>
+                            </div>
+                            <div class="">
+                                <input class="w-100" type="text" id="editarArticulo" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="" for="editarMarca">Marca</label>
+                            </div>
+                            <div class="">
+                                <input class="w-100" type="text" id="editarMarca" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="" for="editarDescripcion">Descripción</label>
+                            </div>
+                            <div class="">
+                                <textarea class="w-100" type="text" id="editarDescripcion" required></textarea>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="" for="editarImagen">URL de Imagen</label>
+                            </div>
+                            <div class="">
+                                <input class="w-100" type="text" id="editarImagen">
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="" for="editarPrecio">Precio $</label>
+                            </div>
+                            <div class="">
+                                <input class="w-100" type="number" id="editarPrecio" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="" for="editarCantidad">Cantidad</label>
+                            </div>
+                            <div class="">
+                                <input class="w-100" type="number" id="editarCantidad" required>
+                            </div>
+                        </div>
+        
+                        <div class="mx-5 my-3">
+                            <label for="editarUnidad">Unidad de Venta:</label>
+                            <select id="editarUnidad" required>
+                                <option>Piezas</option>
+                                <option>Metros lineales</option>
+                                <option>Kilos</option>
+                                <option>Toneladas</option>
+                                <option>Otros</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Enviar</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

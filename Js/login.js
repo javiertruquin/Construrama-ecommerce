@@ -65,7 +65,7 @@ formularioForm.onsubmit = function (e) {
         nombre: nombreInput.value,
         correo: correoInput.value,
         pass: passInput.value,
-        rol: "usuario",
+        rol: "Usuario",
     };
     usuarios.push(usuario);
     const json = JSON.stringify(usuarios); // Convertir datos a un string JSON.

@@ -34,7 +34,8 @@
             </button>
             <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li><a class="nav-link active text-white" aria-current="page" href="./admin-productos.html">Modificar Productos</a></li>
+                    <li><a class="nav-link active text-white" aria-current="page"
+                            href="./admin-productos.html">Modificar Productos</a></li>
                 </ul>
             </div>
         </div>
@@ -166,6 +167,64 @@
 
         </div>
     </footer>
+    <!-- modal -->
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="formularioEditar">
+                    <div id="" class="modal-body">
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="" for="editarUsuario">Usuario</label>
+                            </div>
+                            <div class="">
+                                <input class="w-100" type="text" id="editarUsuario" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="" for="editarNombre">Nombre y Apellido</label>
+                            </div>
+                            <div class="">
+                                <input class="w-100" type="text" id="editarNombre" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="" for="editarCorreo">Correo electronico</label>
+                            </div>
+                            <div class="">
+                                <input class="w-100" type="email" id="editarCorreo" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="" for="editarPass">Contraseña</label>
+                            </div>
+                            <div class="">
+                                <input class="w-100" type="password" id="editarPass" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 my-3">
+                            <label for="editarRol">Rol</label>
+                            <select id="editarRol" required>
+                                <option>Administrador</option>
+                                <option>Empleado</option>
+                                <option>Usuario</option>
+                            </select>
+                        </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit">Enviar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
