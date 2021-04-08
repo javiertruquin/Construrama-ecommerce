@@ -23,16 +23,30 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light barra ">
-        <div class="container-fluid">
+    <nav>
+        <nav class="navbar navbar-expand-lg navbar-light barra ">
+          <div class="container-fluid">
             <a class="navbar-brand m-0" href="./index.html">
-                <img src="./Imagenes/CONSTRURAMA-AZUL2.png" class="logo mx-2" alt="" width="150" height="70">
+              <img src="./Imagenes/CONSTRURAMA-AZUL2.png" class="logo mx-2" alt="" width="150" height="70">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+<<<<<<< HEAD
+              <ul class="navbar-nav" id="navbarUI">
+                <li class="nav-item">
+                  <a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a>
+                </li>
+                 <ul class="navbar-nav">
+    
+                </ul>
+                <!-- <li class="nav-item">
+                  <a class="nav-link active text-white" aria-current="page" href="#">NOMBREUSUARIO</a>
+                </li> -->
+              </ul>
+=======
                 <ul class="navbar-nav" id="navbarUI">
 
                 </ul>
@@ -40,10 +54,42 @@
                     <li><a class="nav-link active text-white" aria-current="page"
                             href="./admin-productos.html">Modificar Productos</a></li>
                 </ul> -->
+>>>>>>> 26d242068cdfda3f2e1ac567356e9102e6849125
             </div>
+          </div>
+        </nav>
+      </nav>
+      <!-- MODAL SIGN UP -->
+   <div id="formulario" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content contenedor-registro text-white">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel"><span>Sign Up</span></h4>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-    </nav>
-    <header>
+        <form class="modal-body" id="registro">
+            <label for="usuario" class="me-5"> Usuario </label><br>
+            <input type="text" id="inputUsuario" placeholder="Usuario" class="mt-2 mb-2" required><br>
+
+            <label for="Nombre y Apellido" class="mt-2 mb-2">Nombre y Apellido</label><br>
+            <input type="text" id="inputNombre" name="" placeholder="Nombre y Apellido" class="mb-2" required><br>
+
+            <label for="password" class="mt-2 mb-2">Contraseña</label><br>
+            <input type="password" id="inputPass" name="" placeholder="Contraseña" class="mb-2" required><br>
+
+            <label for="password" class="mt-2 mb-2">Correo Electronico</label><br>
+            <input type="email" id="inputCorreo" name=""  placeholder="Ej:lrlichardi@hotmail.com" class="mb-2" required><br>
+
+                  
+        <label for="" class="cajacheck ms-2 mb-2 mt-3"><input type="checkbox" class="me-1 ms-1 ">Acepto<a style="font-size: 15px;" href="">Terminos y condiciones</a></label>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-light">Confirmar</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+          <header>
 
     </header>
     <!-- Alta de Usuarios -->
@@ -130,7 +176,7 @@
     <section>
 
     </section>
-    <footer class="footer-bg container-fluid">
+    <footer class="footer-bg container-fluid" id="loginUI">
         <div class="row p-2 align-items-center text-center text-md-start">
             <div class="col-12 col-md-4 mt-1 text-center text-md-end">
                 <img class="logo-chico mb-3 mx-1" src="./Imagenes/SOLO_PALA_AZUL.png" alt="">
