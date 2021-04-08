@@ -5,14 +5,13 @@ const navbar = document.getElementById('navbarUI');
 const logInNav = document.getElementById('logInNavUI');
 const registrarse = document.getElementById('registrarseUI');
 // REGISTRO USUARIO 
-const formularioForm = document.getElementById('registro');
-const usuarioInput = document.getElementById('inputUsuario');
-const nombreInput = document.getElementById('inputNombre');
-const correoInput = document.getElementById('inputCorreo');
-const passInput = document.getElementById('inputPass');
+const formularioFormLog = document.getElementById('registro');
+const usuarioInputUI = document.getElementById('inputUsuario');
+const nombreInputUI = document.getElementById('inputNombre');
+const correoInputUI = document.getElementById('inputCorreo');
+const passInputUI = document.getElementById('inputPass');
 // CONVERSION DE STRING A ARRAY Y AL REVES
-let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-let usuarioId = "";
+
 let sesionIniciada = [];
 let userLog = [];
 function generarID() {
@@ -22,11 +21,13 @@ function generarID() {
 
 function validarUsuarioSubmit(e) {
     e.preventDefault();
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
     const usuarioValido = usuarios.find((lUsuario) => lUsuario.usuario === usuario.value && lUsuario.pass === contra.value);
     if (usuarioValido) {
         alert("Bienvenido " + usuarioValido.nombre);
         if (usuarioValido.rol === 'Administrador') {
             let logUsuario = `
+        <li><a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a></li>
         <li><a class="nav-link active text-white" aria-current="page" href="./admin-productos.html">Modificar Productos</a></li>
         <li><a class="nav-link active text-white" aria-current="page" href="./admin-usuarios.html">Modificar Usuarios</a></li>
         <li><a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a></li>
@@ -36,33 +37,52 @@ function validarUsuarioSubmit(e) {
             sesionIniciada.push(usuarioValido);
             sessionStorage.setItem('sesion', JSON.stringify(sesionIniciada));
             sessionStorage.setItem('log', JSON.stringify(userLog));
+            window.location = "admin-usuarios.html";
+            console.log(userLog);
         }
         else if (usuarioValido.rol === 'Empleado') {
             let logUsuario = `
+            <li><a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a></li>
         <li><a class="nav-link active text-white" aria-current="page" href="./admin-productos.html">Modificar Productos</a></li>
         <li><a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a></li>
          <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
                     `;
-                    userLog.push(logUsuario);
-                    sesionIniciada.push(usuarioValido);
-                    sessionStorage.setItem('sesion', JSON.stringify(sesionIniciada));
-                    sessionStorage.setItem('log', JSON.stringify(userLog));
+            userLog.push(logUsuario);
+            sesionIniciada.push(usuarioValido);
+            sessionStorage.setItem('sesion', JSON.stringify(sesionIniciada));
+            sessionStorage.setItem('log', JSON.stringify(userLog));
+            window.location = "admin-productos.html"
         }
         else {
             let logUsuario = `
-         <a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a>
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Productos </a>
+              <ul class="dropdown-menu menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item text-white" href="#sec-griferia">Griferia</a></li>
+              <li><a class="dropdown-item text-white" href="#sec-porcelanato">Porcelanato</a></li>
+              <li><a class="dropdown-item text-white" href="#sec-sanitarios">Sanitario</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="./index.html#sec-sobrenosotros">Sobre Nosotros</a>
+            </li>
+         <li><a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a><li>
          <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
                     `;
-                    userLog.push(logUsuario);
-                    sesionIniciada.push(usuarioValido);
-                    sessionStorage.setItem('sesion', JSON.stringify(sesionIniciada));
-                    sessionStorage.setItem('log', JSON.stringify(userLog));
+            userLog.push(logUsuario);
+            sesionIniciada.push(usuarioValido);
+            sessionStorage.setItem('sesion', JSON.stringify(sesionIniciada));
+            sessionStorage.setItem('log', JSON.stringify(userLog));
+            window.location = "index.html";
         }
-        logInNav.style.display = "none";
-        registrarse.style.display = "none";
         navbar.innerHTML = userLog.join('');
         verificaSesion();
-        window.location="index.html";
+
     }
     else {
         alert("Usuario o contraseña no coinciden");
@@ -70,43 +90,44 @@ function validarUsuarioSubmit(e) {
     closeSesion();
 }
 
-formularioForm.onsubmit = function (e) {
+function enviarFormularioRegistro(e) {
     e.preventDefault();
     const usuario = {
         id: generarID(),
-        usuario: usuarioInput.value,
-        nombre: nombreInput.value,
-        correo: correoInput.value,
-        pass: passInput.value,
+        usuario: usuarioInputUI.value,
+        nombre: nombreInputUI.value,
+        correo: correoInputUI.value,
+        pass: passInputUI.value,
         rol: "Usuario",
     };
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
     usuarios.push(usuario);
     const json = JSON.stringify(usuarios); // Convertir datos a un string JSON.
     localStorage.setItem('usuarios', json);
     const myModal = document.getElementById('formulario')
     const modal = bootstrap.Modal.getInstance(myModal);
     modal.hide();
-    alert("Bienvenido a Construrama " + usuarioValido.nombre + "se registro exitosamente");
-    formularioForm.reset(); // reset limpia los campos del formulario.
+    formularioFormLog.reset(); // reset limpia los campos del formulario.
+    alert("Bienvenido a Construrama " + usuario.nombre + " se registro exitosamente");
 };
 
+
 function verificaSesion() {
-    console.log(sessionStorage.getItem('sesion'));
-    if (sessionStorage.getItem('sesion') === null) {  }
+    if (sessionStorage.getItem('sesion') === null) { }
     else {
-        logInNav.style.display = "none";
-        registrarse.style.display = "none";
         let log = JSON.parse(sessionStorage.getItem('log')) || [];
         navbar.innerHTML = log.join('');
     }
-   closeSesion();
+    closeSesion();
 }
-function closeSesion () {
+function closeSesion() {
     const close = document.getElementById('closeUI');
     close.addEventListener('click', function () {
         location.href = 'index.html'
         sessionStorage.removeItem('sesion');
     })
 }
+
 login.onsubmit = validarUsuarioSubmit;
+formularioFormLog.onsubmit = enviarFormularioRegistro;
 verificaSesion();

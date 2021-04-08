@@ -28,8 +28,7 @@ formularioForm.onsubmit = function (e) {
         correo: correoInput.value,
         pass: passInput.value,
         rol: rolInput.value,
-        
-    };
+        };
     usuarios.push(usuario);
     const json = JSON.stringify(usuarios); // Convertir datos a un string JSON.
     localStorage.setItem('usuarios', json); 
@@ -121,7 +120,6 @@ editarForm.onsubmit = function (e) {
             return usuario;
         }
     });
-
     const json = JSON.stringify(usuariosModificados);
     localStorage.setItem("usuarios", json);
     usuarios = usuariosModificados;
