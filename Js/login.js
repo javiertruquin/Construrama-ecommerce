@@ -10,6 +10,7 @@ const usuarioInputUI = document.getElementById('inputUsuario');
 const nombreInputUI = document.getElementById('inputNombre');
 const correoInputUI = document.getElementById('inputCorreo');
 const passInputUI = document.getElementById('inputPass');
+const usuarioExLabel = document.getElementById('usuarioExisteUI');
 // CONVERSION DE STRING A ARRAY Y AL REVES
 
 let sesionIniciada = [];
@@ -44,7 +45,7 @@ function validarUsuarioSubmit(e) {
             let logUsuario = `
             <li><a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a></li>
         <li><a class="nav-link active text-white" aria-current="page" href="./admin-productos.html">Modificar Productos</a></li>
-        <li><a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a></li>
+        <li><a class="nav-link active text-white" aria-current="page" href="#perfil">USUARIO: ${usuarioValido.usuario}</a></li>
          <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
                     `;
             userLog.push(logUsuario);
@@ -101,14 +102,20 @@ function enviarFormularioRegistro(e) {
         rol: "Usuario",
     };
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    usuarios.push(usuario);
-    const json = JSON.stringify(usuarios); // Convertir datos a un string JSON.
-    localStorage.setItem('usuarios', json);
-    const myModal = document.getElementById('formulario')
-    const modal = bootstrap.Modal.getInstance(myModal);
-    modal.hide();
-    formularioFormLog.reset(); // reset limpia los campos del formulario.
-    alert("Bienvenido a Construrama " + usuario.nombre + " se registro exitosamente");
+    usuarioExiste = usuarios.find((usuarioEx) => usuarioEx.usuario === usuarioInputUI.value)
+    if (usuarioExiste == null || undefined) {
+        usuarios.push(usuario);
+        const json = JSON.stringify(usuarios); // Convertir datos a un string JSON.
+        localStorage.setItem('usuarios', json);
+        const myModal = document.getElementById('formulario')
+        const modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+        formularioFormLog.reset(); // reset limpia los campos del formulario.
+        alert("Bienvenido a Construrama " + usuario.nombre + " se registro exitosamente");
+    }
+    else {
+        usuarioExLabel.classList.remove('d-none');
+    }
 };
 
 

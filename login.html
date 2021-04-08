@@ -77,7 +77,10 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form class="modal-body" id="registro">
-            <label for="usuario" class="me-5"> Usuario </label><br>
+           
+            <label for="usuario" class="me-5"> Usuario </label>
+            <label for="usuario" class="me-5 d-none" id="usuarioExisteUI" style="color:red;"> USUARIO EXISTE</label>
+            <br>
             <input type="text" id="inputUsuario" placeholder="Usuario" class="mt-2 mb-2" required><br>
 
             <label for="Nombre y Apellido" class="mt-2 mb-2">Nombre y Apellido</label><br>
@@ -90,7 +93,7 @@
             <input type="email" id="inputCorreo" name=""  placeholder="Ej:lrlichardi@hotmail.com" class="mb-2" required><br>
 
                   
-        <label for="" class="cajacheck ms-2 mb-2 mt-3"><input type="checkbox" class="me-1 ms-1 ">Acepto<a style="font-size: 15px;" href="">Terminos y condiciones</a></label>
+        <label for="" class="cajacheck ms-2 mb-2 mt-3"><input type="checkbox" class="me-1 ms-1" required>Acepto<a style="font-size: 15px;" href="">Terminos y condiciones</a></label>
         <div class="modal-footer">
             <button type="submit" class="btn btn-outline-light">Confirmar</button>
         </div>

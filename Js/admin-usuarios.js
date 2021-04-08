@@ -30,14 +30,12 @@ formularioForm.onsubmit = function (e) {
         rol: rolInput.value,
         };
     usuarios.push(usuario);
-    const json = JSON.stringify(usuarios); // Convertir datos a un string JSON.
-    localStorage.setItem('usuarios', json); 
+    localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
     mostrarUsuarios();
     formularioForm.reset(); // reset limpia los campos del formulario.
 };
 
 function mostrarUsuarios() {
-
     let filas = [];
     for (let i = 0; i < usuarios.length; i++) {
         const usuario = usuarios[i];
