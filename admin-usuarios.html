@@ -34,6 +34,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+<<<<<<< HEAD
               <ul class="navbar-nav" id="navbarUI">
                 <li class="nav-item">
                   <a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a>
@@ -45,6 +46,15 @@
                   <a class="nav-link active text-white" aria-current="page" href="#">NOMBREUSUARIO</a>
                 </li> -->
               </ul>
+=======
+                <ul class="navbar-nav" id="navbarUI">
+
+                </ul>
+                <!-- <ul class="navbar-nav">
+                    <li><a class="nav-link active text-white" aria-current="page"
+                            href="./admin-productos.html">Modificar Productos</a></li>
+                </ul> -->
+>>>>>>> 26d242068cdfda3f2e1ac567356e9102e6849125
             </div>
           </div>
         </nav>
@@ -90,39 +100,39 @@
 
                 <div class="mx-5 mt-2 mb-3">
                     <div class="">
-                        <label class="" for="inputUsuario">Usuario</label>
+                        <label class="form-label" for="inputUsuario">Usuario</label>
                     </div>
                     <div class="">
-                        <input class="w-100" type="text" id="inputUsuario" required>
-                    </div>
-                </div>
-                <div class="mx-5 mt-2 mb-3">
-                    <div class="">
-                        <label class="" for="inputNombre">Nombre y Apellido</label>
-                    </div>
-                    <div class="">
-                        <input class="w-100" type="text" id="inputNombre" required>
+                        <input class="form-control w-100" type="text" id="inputUsuario" required>
                     </div>
                 </div>
                 <div class="mx-5 mt-2 mb-3">
                     <div class="">
-                        <label class="" for="inputCorreo">Correo electronico</label>
+                        <label class="form-label" for="inputNombre">Nombre y Apellido</label>
                     </div>
                     <div class="">
-                        <input class="w-100" type="email" id="inputCorreo" required>
+                        <input class="form-control w-100" type="text" id="inputNombre" required>
                     </div>
                 </div>
                 <div class="mx-5 mt-2 mb-3">
                     <div class="">
-                        <label class="" for="inputPass">Contraseña</label>
+                        <label class="form-label" for="inputCorreo">Correo electronico</label>
                     </div>
                     <div class="">
-                        <input class="w-100" type="password" id="inputPass" required>
+                        <input class="form-control w-100" type="email" id="inputCorreo" required>
+                    </div>
+                </div>
+                <div class="mx-5 mt-2 mb-3">
+                    <div class="">
+                        <label class="form-label" for="inputPass">Contraseña</label>
+                    </div>
+                    <div class="">
+                        <input class="form-control w-100" type="password" id="inputPass" required>
                     </div>
                 </div>
                 <div class="mx-5 my-3">
-                    <label for="inputRol">Rol</label>
-                    <select id="inputRol" required>
+                    <label class="form-label" for="inputRol">Rol</label>
+                    <select class="form-select" id="inputRol" required>
                         <option>Administrador</option>
                         <option>Empleado</option>
                         <option>Usuario</option>
@@ -219,39 +229,39 @@
                     <div id="" class="modal-body">
                         <div class="mx-5 mt-2 mb-3">
                             <div class="">
-                                <label class="" for="editarUsuario">Usuario</label>
+                                <label class="form-label" for="editarUsuario">Usuario</label>
                             </div>
                             <div class="">
-                                <input class="w-100" type="text" id="editarUsuario" required>
-                            </div>
-                        </div>
-                        <div class="mx-5 mt-2 mb-3">
-                            <div class="">
-                                <label class="" for="editarNombre">Nombre y Apellido</label>
-                            </div>
-                            <div class="">
-                                <input class="w-100" type="text" id="editarNombre" required>
+                                <input class="form-control w-100" type="text" id="editarUsuario" required>
                             </div>
                         </div>
                         <div class="mx-5 mt-2 mb-3">
                             <div class="">
-                                <label class="" for="editarCorreo">Correo electronico</label>
+                                <label class="form-label" for="editarNombre">Nombre y Apellido</label>
                             </div>
                             <div class="">
-                                <input class="w-100" type="email" id="editarCorreo" required>
+                                <input class="form-control w-100" type="text" id="editarNombre" required>
                             </div>
                         </div>
                         <div class="mx-5 mt-2 mb-3">
                             <div class="">
-                                <label class="" for="editarPass">Contraseña</label>
+                                <label class="form-label" for="editarCorreo">Correo electronico</label>
                             </div>
                             <div class="">
-                                <input class="w-100" type="password" id="editarPass" required>
+                                <input class="form-control w-100" type="email" id="editarCorreo" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="form-label" for="editarPass">Contraseña</label>
+                            </div>
+                            <div class="">
+                                <input class="form-control w-100" type="password" id="editarPass" required>
                             </div>
                         </div>
                         <div class="mx-5 my-3">
-                            <label for="editarRol">Rol</label>
-                            <select id="editarRol" required>
+                            <label class="form-label" for="editarRol">Rol</label>
+                            <select class="form-select" id="editarRol" required>
                                 <option>Administrador</option>
                                 <option>Empleado</option>
                                 <option>Usuario</option>
@@ -273,7 +283,7 @@
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
     <script src="./Js/admin-usuarios.js"></script>
-    <script src="./Js/login.js"></script>
+    <script src="js/login.js"></script>
 
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
