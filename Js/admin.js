@@ -18,7 +18,7 @@ const editarImagenInput = document.getElementById("editarImagen");
 const editarPrecioInput = document.getElementById("editarPrecio");
 const editarCantidadInput = document.getElementById("editarCantidad");
 const editarCodigoDeFabricanteInput = document.getElementById("editarFabricante");
-const editarUnidadInput = document.getElementById("editarUnidad");
+const editarUnidadDeVentaInput = document.getElementById("editarUnidad");
 let json = localStorage.getItem('productos');
 let productos = JSON.parse(json) || [];
 let productoId = '';
@@ -124,33 +124,39 @@ function cargarModalEditar(id) {
     editarPrecioInput.value = productoEncontrado.precio;
     editarCantidadInput.value = productoEncontrado.cantidad;
     editarCodigoDeFabricanteInput.value = productoEncontrado.codigoDeFabricante;
-    editarUnidadInput.value = productoEncontrado.unidadDeVenta;
+    editarUnidadDeVentaInput.value = productoEncontrado.unidadDeVenta;
     productoId = productoEncontrado.id;
 }
 
-// editarForm.onsubmit = function (e) {
-//     e.preventDefault();
+editarForm.onsubmit = function (e) {
+    e.preventDefault();
 
-//     const notasModificadas = notas.map((nota) => {
-//         if (nota.id === notaId) {
-//             const notasModificadas = {
-//                 ...nota,
-//                 titulo: editarTituloInput.value,
-//                 contenido: editarContenidoInput.value,
-//                 categoria: editarCategoriaInput.value,
-//             };
-//             return notasModificadas;
-//         } else {
-//             return nota;
-//         }
-//     });
+    const productosModificados = productos.map((producto) => {
+        if (producto.id === productoId) {
+            const productosModificados = {
+                ...producto,
+                categoria: editarCategoriaInput.value,
+                articulo: editarArticuloInput.value,
+                marca: editarMarcaInput.value,
+                descripcion: editarDescripcionInput.value,
+                imagen: editarImagenInput.value,
+                precio: editarPrecioInput.value,
+                cantidad: editarCantidadInput.value,
+                codigoDeFabricante: editarCodigoDeFabricanteInput.value,
+                unidadDeVenta: editarUnidadDeVentaInput.value,
+            };
+            return productosModificados;
+        } else {
+            return producto;
+        }
+    });
 
-//     const json = JSON.stringify(notasModificadas);
-//     localStorage.setItem("notas", json);
-//     notas = notasModificadas;
-//     mostrarnotas();
-//     const myModal = document.getElementById('modalEditar')
-//     const modal = bootstrap.Modal.getInstance(myModal);
-//     modal.hide();
-//     formularioForm.reset();
-// };
+    const json = JSON.stringify(productosModificados);
+    localStorage.setItem("productos", json);
+    productos = productosModificados;
+    mostrarProductos();
+    const myModal = document.getElementById('modalEditar')
+    const modal = bootstrap.Modal.getInstance(myModal);
+    modal.hide();
+    formularioForm.reset();
+};
