@@ -1,6 +1,4 @@
-body{   
-    font-family: 'Open Sans', sans-serif;
-}
+
 
 .btn-primary {
     color: #fff;
@@ -29,9 +27,6 @@ body{
 .footer-bg{
     background-color: rgb(20, 41, 103);
     color: white;
-    height: 100vh;
-    height: 20vh;
-
 }
 
 .social-icon{
