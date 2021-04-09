@@ -1,3 +1,8 @@
+body {font-family: 'Open Sans', sans-serif;;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;}
+
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -34,20 +39,11 @@
     background-position:center;
 }
 .banner2{
-    background-position: bottom;
-}
-.banner3 {
     background-position: center;
 }
-.texto-container {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
+.banner3 {
+    background-position:center;
 }
-
 
 .card .card-sm {
     min-height: 340px;
