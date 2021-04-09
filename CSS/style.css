@@ -5,11 +5,7 @@
     background-color: rgb(20, 41, 103);;
     border-color: rgb(20, 41, 103);;
 }
-.tabla-azul{
-    color: white;
-    background-color: rgb(20, 41, 103);
-    
-}
+
 
 .logo{
     width: 210px;
@@ -27,6 +23,13 @@
 .footer-bg{
     background-color: rgb(20, 41, 103);
     color: white;
+}
+
+@media only screen and (min-width: 1000px) {
+        .footer-abajo{
+            position:fixed;
+            bottom: 0;
+        }
 }
 
 .social-icon{

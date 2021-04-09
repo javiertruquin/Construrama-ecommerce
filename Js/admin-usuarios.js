@@ -41,11 +41,10 @@ function mostrarUsuarios() {
         const usuario = usuarios[i];
         const tr = `
             <tr>
-                <td>${usuario.usuario}</td>
-                <td>${usuario.nombre}</td>
-                <td>${usuario.correo}</td>
-                <td>${usuario.rol}</td>
-                <td>
+                <td class="chico">${usuario.usuario}</td>
+                <td class="chico">${usuario.nombre}</td>
+                <td class="chico">${usuario.rol}</td>
+                <td class="chico">
                     <i onclick="mostrarDetalle('${usuario.id}')" class="fas fa-search boton-buscar mx-1"
                         data-bs-toggle="modal" data-bs-target="#modalDetalle"></i>
                     <i onclick="cargarModalEditar('${usuario.id}')" class="fas fa-edit boton-editar mx-1"
@@ -77,16 +76,17 @@ function eliminarUsuario(id) {
     mostrarUsuarios();
 }
 
-// function mostrarDetalle(id) {
-//     const usuarioEncontrado = usuarios.find((usuario) => usuario.id === id);
-//     const detalleDiv = document.getElementById("detalleUsuario");
-//     const detalleUsuario = `
-//     <p>Usuario: ${usuarioEncontrado.usuario}</p>
-//     <p>Correo: ${usuarioEncontrado.correo}</p>
-//     <p>Rol: ${usuarioEncontrado.rol}</p>
-//     `;
-//     detalleDiv.innerHTML = detalleUsuario;
-// }
+function mostrarDetalle(id) {
+    const usuarioEncontrado = usuarios.find((usuario) => usuario.id === id);
+    const detalleDiv = document.getElementById("detalleUsuario");
+    const detalleUsuario = `
+    <h5><b>Usuario: </b></h5> <p>${usuarioEncontrado.usuario}</p>
+    <h5><b>Nombre y Apellido:</b></h5> <p>${usuarioEncontrado.nombre}</p>
+    <h5><b>Correo:</b></h5> <p>${usuarioEncontrado.correo}</p>
+    <h5><b>Rol:</b></h5> <p>${usuarioEncontrado.rol}</p>
+    `;
+    detalleDiv.innerHTML = detalleUsuario;
+}
 
 function cargarModalEditar(id) {
     const usuarioEncontrado = usuarios.find((usuario) => usuario.id === id);

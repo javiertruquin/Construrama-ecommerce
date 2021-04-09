@@ -1,9 +1,9 @@
 body{
-    background-color:rgb(255, 147, 46) ;
+    background-color:rgb(255, 185, 73) ;
 }
 
 .navbar-color{
-    background-color: rgb(20, 41, 103)
+    background-color: rgb(20, 41, 103);
 }
 
 .navbar-nav a{
@@ -38,4 +38,22 @@ body{
 .boton-subir:hover{
     color: yellow;
     cursor: pointer;
+}
+
+.bordes{
+    border-radius: 10px;
+}
+
+
+
+.tabla-azul{
+    color: white;
+    background-color: rgb(20, 41, 103);
+    
+}
+
+@media only screen and (max-width: 400px) {
+    .chico{
+        font-size: x-small ;
+    }
 }

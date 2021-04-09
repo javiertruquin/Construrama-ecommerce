@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="CSS/style-index.css">
     <link rel="stylesheet" href="CSS/admin.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="./CSS/style-index.css">
     <link rel="shortcut icon" href="Imagenes/Imagenes Caro/Favicon-fondo-transparente.png" type="image/x-icon">
 
     <title>Usuarios</title>
@@ -24,71 +25,74 @@
 
 <body>
     <nav>
-        <nav class="navbar navbar-expand-lg navbar-light barra ">
-          <div class="container-fluid">
-            <a class="navbar-brand m-0" href="./index.html">
-              <img src="./Imagenes/CONSTRURAMA-AZUL2.png" class="logo mx-2" alt="" width="150" height="70">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
-              <ul class="navbar-nav" id="navbarUI">
-                <li class="nav-item">
-                  <a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a>
-                </li>
-                 <ul class="navbar-nav">
-    
-                </ul>
-                <!-- <li class="nav-item">
+        <nav class="navbar navbar-expand navbar-light barra ">
+            <div class="container-fluid">
+                <a class="navbar-brand m-0" href="./index.html">
+                    <img src="./Imagenes/CONSTRURAMA-AZUL2.png" class="logo mx-2" alt="" width="150" height="70">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+                    <ul class="navbar-nav" id="navbarUI">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <ul class="navbar-nav">
+
+                        </ul>
+                        <!-- <li class="nav-item">
                   <a class="nav-link active text-white" aria-current="page" href="#">NOMBREUSUARIO</a>
                 </li> -->
-              </ul>
+                    </ul>
 
+                </div>
             </div>
-          </div>
         </nav>
-      </nav>
-      <!-- MODAL SIGN UP -->
-   <div id="formulario1" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content contenedor-registro text-white">
-        <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalLabel"><span>Sign Up</span></h4>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+    </nav>
+    <!-- MODAL SIGN UP -->
+    <div id="formulario1" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content contenedor-registro text-white">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel"><span>Sign Up</span></h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <form class="modal-body" id="registro">
+                    <label for="usuario" class="me-5"> Usuario </label><br>
+                    <input type="text" id="inputUsuario1" placeholder="Usuario" class="mt-2 mb-2" required><br>
+
+                    <label for="Nombre y Apellido" class="mt-2 mb-2">Nombre y Apellido</label><br>
+                    <input type="text" id="inputNombre1" name="" placeholder="Nombre y Apellido" class="mb-2"
+                        required><br>
+
+                    <label for="password" class="mt-2 mb-2">Contraseña</label><br>
+                    <input type="password" id="inputPass1" name="" placeholder="Contraseña" class="mb-2" required><br>
+
+                    <label for="password" class="mt-2 mb-2">Correo Electronico</label><br>
+                    <input type="email" id="inputCorreo1" name="" placeholder="Ej:lrlichardi@hotmail.com" class="mb-2"
+                        required><br>
+
+
+                    <label for="" class="cajacheck ms-2 mb-2 mt-3"><input type="checkbox" class="me-1 ms-1 ">Acepto<a
+                            style="font-size: 15px;" href="">Terminos y condiciones</a></label>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-outline-light">Confirmar</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <form class="modal-body" id="registro">
-            <label for="usuario" class="me-5"> Usuario </label><br>
-            <input type="text" id="inputUsuario1" placeholder="Usuario" class="mt-2 mb-2" required><br>
-
-            <label for="Nombre y Apellido" class="mt-2 mb-2">Nombre y Apellido</label><br>
-            <input type="text" id="inputNombre1" name="" placeholder="Nombre y Apellido" class="mb-2" required><br>
-
-            <label for="password" class="mt-2 mb-2">Contraseña</label><br>
-            <input type="password" id="inputPass1" name="" placeholder="Contraseña" class="mb-2" required><br>
-
-            <label for="password" class="mt-2 mb-2">Correo Electronico</label><br>
-            <input type="email" id="inputCorreo1" name=""  placeholder="Ej:lrlichardi@hotmail.com" class="mb-2" required><br>
-
-                  
-        <label for="" class="cajacheck ms-2 mb-2 mt-3"><input type="checkbox" class="me-1 ms-1 ">Acepto<a style="font-size: 15px;" href="">Terminos y condiciones</a></label>
-        <div class="modal-footer">
-            <button type="submit" class="btn btn-outline-light">Confirmar</button>
-        </div>
-      </form>
-      </div>
     </div>
-  </div>
-          <header>
+    <header>
 
     </header>
     <!-- Alta de Usuarios -->
-    <section>
-        <div class="card m-auto col-lg-4 col-sm-8 col-10 mt-3 mb-3">
-            <form class="formulario" id="formulario">
+    <section class="d-lg-flex justify-content-around align-content-center">
+        <div class="card bordes col-xl-3 col-lg-5 col-10 m-lg-5 my-5 m-auto">
+            <form class="formulario " id="formulario">
                 <h1 class="text-center mt-3" id="titulo">Alta de Usuario</h1>
-
                 <div class="mx-5 mt-2 mb-3">
                     <div class="">
                         <label class="form-label" for="inputUsuario">Usuario</label>
@@ -135,15 +139,14 @@
             </form>
         </div>
         <!-- Tabla Usuarios -->
-        <div class="m-auto">
-            <table class="table tabla-azul">
+        <div class="col-xl-7 col-lg-5 col-10 m-lg-5 m-auto margen">
+            <table class="table table-bordered tabla-azul">
                 <thead>
                     <tr>
-                        <th scope="col">Usuario</th>
-                        <th scope="col">Nombre y Apellido</th>
-                        <th scope="col">Correo electronico</th>
-                        <th scope="col">Rol</th>
-                        <th scope="col">Acciones</th>
+                        <th class="chico" scope="col">Usuario</th>
+                        <th class="chico" scope="col">Nombre y Apellido</th>
+                        <th class="chico" scope="col">Rol</th>
+                        <th class="chico" scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody id="tabla">
@@ -164,10 +167,8 @@
             </table>
         </div>
     </section>
-    <section>
 
-    </section>
-    <footer class="footer-bg container-fluid" id="loginUI">
+    <footer class="footer-bg container-fluid footer-abajo">
         <div class="row p-2 align-items-center text-center text-md-start">
             <div class="col-12 col-md-4 mt-1 text-center text-md-end">
                 <img class="logo-chico mb-3 mx-1" src="./Imagenes/SOLO_PALA_AZUL.png" alt="">
@@ -208,7 +209,22 @@
 
         </div>
     </footer>
-    <!-- modal -->
+    <!-- modal Detalle -->
+    <div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel"><b>Usuario</b></h3>
+                </div>
+                <div id="detalleUsuario" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal Editar-->
     <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -258,10 +274,10 @@
                                 <option>Usuario</option>
                             </select>
                         </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary" type="submit">Enviar</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Enviar</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
                 </form>
             </div>
         </div>
