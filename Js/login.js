@@ -90,7 +90,6 @@ function validarUsuarioSubmit(e) {
         }
         navbar.innerHTML = userLog.join('');
         verificaSesion();
-
     }
     else {
         alert("Usuario o contraseña no coinciden");
