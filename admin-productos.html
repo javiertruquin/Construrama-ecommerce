@@ -94,8 +94,8 @@
 
     </header>
     <!-- Alta de productos -->
-    <section>
-        <div class="card m-auto col-lg-4 col-sm-8 col-10 mt-3 mb-3">
+    <section class="d-lg-flex justify-content-around align-content-center">
+        <div class="card bordes col-xl-3 col-lg-5 col-10 m-lg-5 my-5 m-auto">
             <form class="formulario" id="formulario">
                 <h1 class="text-center mt-3" id="titulo">Alta de Productos</h1>
                 <div class="mx-5 my-3">
@@ -180,20 +180,16 @@
             </form>
         </div>
         <!-- Tabla Productos -->
-        <div class="m-auto">
+        <div class="col-xl-7 col-lg-5 col-10 m-lg-5 m-auto margen">
             <table class="table tabla-azul">
                 <thead>
                     <tr>
-                        <th class="colum-pequeña" scope="col">Codigo</th>
-                        <th class="colum-pequeña" scope="col">Categoria</th>
-                        <th class="colum-pequeña" scope="col">Articulo</th>
-                        <th class="colum-pequeña" scope="col">Marca</th>
-                        <th class="colum-grande" scope="col">Descripción</th>
-                        <th class="colum-pequeña" scope="col">Imagen</th>
-                        <th class="colum-pequeña" scope="col">Precio</th>
-                        <th class="colum-pequeña" scope="col">Cantidad</th>
-                        <th class="colum-pequeña" scope="col">Unidad de Venta</th>
-                        <th class="colum-mediana" scope="col">Acciones</th>
+                        <th class="chico2 colum-pequeña" scope="col">Codigo</th>
+                        <th class="chico2 colum-pequeña" scope="col">Categoria</th>
+                        <th class="chico2 colum-pequeña" scope="col">Articulo</th>
+                        <th class="chico2 colum-pequeña" scope="col">Precio</th>
+                        <th class="chico2 colum-pequeña" scope="col">Cantidad</th>
+                        <th class="chico2 colum-mediana" scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody id="tabla">
@@ -217,9 +213,7 @@
             </table>
         </div>
     </section>
-    <section>
 
-    </section>
     <footer class="footer-bg container-fluid" id="loginUI">
         <div class="row p-2 align-items-center text-center text-md-start">
             <div class="col-12 col-md-4 mt-1 text-center text-md-end">
@@ -261,8 +255,22 @@
 
         </div>
     </footer>
-
-    <!-- modal -->
+    <!-- modal Detalle -->
+    <div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel"><b>Producto</b></h3>
+                </div>
+                <div id="detalleProducto" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal Editar-->
     <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

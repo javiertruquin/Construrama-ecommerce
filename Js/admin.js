@@ -58,17 +58,12 @@ function mostrarProductos() {
         let producto = productos[i];
         let tr =
             `<tr>
-            <td >${producto.codigoDeFabricante}</td>
-            <td class="colum-pequeña">${producto.categoria}</td>
-            <td class="colum-pequeña">${producto.articulo}</td>
-            <td class="colum-pequeña">${producto.marca}</td>
-            <td>${producto.descripcion}</td>
-            <td class="imagen-table"><img class="imagen-table"src="${producto.imagen}" alt=""></td>
-            <td class="colum-pequeña">$${producto.precio}</td>
-            <td class="colum-pequeña">${producto.cantidad}</td>
-            <td class="colum-pequeña">${producto.unidadDeVenta}</td>
+            <td class="chico2 colum-pequeña">${producto.codigoDeFabricante}</td>
+            <td class="chico2 colum-pequeña">${producto.categoria}</td>
+            <td class="chico2 colum-pequeña">${producto.articulo}</td>
+            <td class="chico2 colum-pequeña">$${producto.precio}</td>
+            <td class="chico2 colum-pequeña">${producto.cantidad}</td>
             <td>
-            <i onclick="mostrarProductosEnWeb('${producto.id}')" class="fas fa-upload boton-subir mx-1"></i>
             <i onclick="mostrarDetalle('${producto.id}')" class="fas fa-search boton-buscar mx-1"
                 data-bs-toggle="modal" data-bs-target="#modalDetalle"></i>
             <i onclick="cargarModalEditar('${producto.id}')" class="fas fa-edit boton-editar mx-1"
@@ -102,17 +97,31 @@ function eliminarProducto(id) {
     mostrarProductos();
 }
 
-// function mostrarDetalle(id) {
-//     const notaEncontrada = notas.find((nota) => nota.id === id);
-//     console.log("mostrarDetalle ~ notaEncontrada", notaEncontrada)
-//     const detalleDiv = document.getElementById("detalleNota");
-//     const detalleNota = `
-//     <p>Titulo: ${notaEncontrada.titulo}</p>
-//     <p>Detalle: ${notaEncontrada.contenido}</p>
-//     <p>Prioridad: ${notaEncontrada.categoria}</p>
-//     `;
-//     detalleDiv.innerHTML = detalleNota;
-// }
+function mostrarDetalle(id) {
+    const productoEncontrado = productos.find((producto) => producto.id === id);
+    console.log("mostrarDetalle ~ productoEncontrado", productoEncontrado)
+    const detalleDiv = document.getElementById("detalleProducto");
+    const detalleProducto = `
+    <div class="d-flex">
+        <div class="">
+            <h5><b>Categoria: </b></h5> <p>${productoEncontrado.categoria}</p>
+            <h5><b>Artículo y Apellido:</b></h5> <p>${productoEncontrado.articulo}</p>
+            <h5><b>Marca:</b></h5> <p>${productoEncontrado.marca}</p>
+            <h5><b>Descripcion:</b></h5> <p>${productoEncontrado.descripcion}</p>
+            <h5><b>Precio:</b></h5> <p>$ ${productoEncontrado.precio}</p>
+            <h5><b>Cantidad:</b></h5> <p>${productoEncontrado.cantidad}</p>
+            <h5><b>Codigo de fabricante:</b></h5> <p>${productoEncontrado.codigoDeFabricante}</p>
+            <h5><b>Unidad de venta:</b></h5> <p>${productoEncontrado.unidadDeVenta}</p>
+        </div>
+        <div class="">
+            <h5><b>Imagen: </b></h5>
+            <img src="${productoEncontrado.imagen}" class="" alt="...">
+        </div>
+    </div>
+
+    `;
+    detalleDiv.innerHTML = detalleProducto;
+}
 
 function cargarModalEditar(id) {
     const productoEncontrado = productos.find((producto) => producto.id === id);

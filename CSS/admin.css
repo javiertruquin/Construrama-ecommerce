@@ -56,4 +56,13 @@ body{
     .chico{
         font-size: x-small ;
     }
+    .margen{
+        margin:10px !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .chico2{
+        font-size: x-small ;
+    }
 }
