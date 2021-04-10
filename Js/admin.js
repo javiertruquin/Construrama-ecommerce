@@ -19,9 +19,48 @@ const editarPrecioInput = document.getElementById("editarPrecio");
 const editarCantidadInput = document.getElementById("editarCantidad");
 const editarCodigoDeFabricanteInput = document.getElementById("editarFabricante");
 const editarUnidadDeVentaInput = document.getElementById("editarUnidad");
-let json = localStorage.getItem('productos');
-let productos = JSON.parse(json) || [];
+// let json = localStorage.getItem('productos');
+// let productos = JSON.parse(json) || [];
 let productoId = '';
+
+let productos = JSON.parse(localStorage.getItem('productos')) || localStorage.setItem('productos',JSON.stringify([
+    {
+        "id": "_bh9oa792e",
+        "categoria": "Griferías",
+        "articulo": "Canilla Negra",
+        "marca": "Negrin",
+        "descripcion": "Una canilla negra",
+        "imagen": "https://foschia.com.ar/static/uploads/products/webp/imIqk4qF2eygJQUGAHuPjbIR38nb78HKnmToj-bn6IpHNSkmbzIsmMjBW3tGjXgBiFEFtJhe08fT_Si9-5B-218eBFrkC_Zy_smsq.webp?x=1600700770",
+        "precio": "150",
+        "cantidad": "5",
+        "codigoDeFabricante": "123456",
+        "unidadDeVenta": "Piezas"
+    },
+    {
+        "id": "_3nn57urfq",
+        "categoria": "Griferías",
+        "articulo": "Canilla negra pequeña",
+        "marca": "Cani",
+        "descripcion": "Una canilla negra pequeña",
+        "imagen": "https://foschia.com.ar/static/uploads/products/webp/imIqk4qF2eygJQUGAHuPjbIR38nb78HKnmToj-bn6IpHNSkmbzIsmLt6KlYStQnCEsMJASiH3-As_LI8QZ5PTa2DX7SPwSRb_smsq.webp?x=1600704300",
+        "precio": "99",
+        "cantidad": "10",
+        "codigoDeFabricante": "123123",
+        "unidadDeVenta": "Piezas"
+    },
+    {
+        "id": "_ztj7tgrv3",
+        "categoria": "Porcelanatos",
+        "articulo": "porcelana marron",
+        "marca": "qwe",
+        "descripcion": "asdqwe",
+        "imagen": "https://foschia.com.ar/static/uploads/products/webp/imIqk4qF2eygJQUGAHuPjbIR38nb78HKnmToj-bn6Iqax7nijXsAIs3b-i3norLr6w-YoqiACHGfg74PClRTR6RKRgjGbs40_smsq.webp?x=1604343803",
+        "precio": "150",
+        "cantidad": "10",
+        "codigoDeFabricante": "123",
+        "unidadDeVenta": "Metros lineales"
+    }
+]));
 
 function generarID() {
     // Math.random should be unique because of its seeding algorithm.

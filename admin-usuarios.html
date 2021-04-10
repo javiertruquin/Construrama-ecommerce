@@ -140,18 +140,19 @@
         </div>
         <!-- Tabla Usuarios -->
         <div class="col-xl-7 col-lg-5 col-10 m-lg-5 m-auto">
-            <table class="table table-bordered tabla-azul">
-                <thead>
-                    <tr>
-                        <th class="chico" scope="col">Usuario</th>
-                        <th class="chico" scope="col">Nombre y Apellido</th>
-                        <th class="chico" scope="col">Rol</th>
-                        <th class="chico" scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tabla">
-                    <tr>
-                        <!-- <td>jtruquin</td>
+            <div class="table-responsive">
+                <table class="table table-bordered tabla-azul">
+                    <thead>
+                        <tr>
+                            <th class="chico" scope="col">Usuario</th>
+                            <th class="chico" scope="col">Nombre y Apellido</th>
+                            <th class="chico" scope="col">Rol</th>
+                            <th class="chico" scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla">
+                        <tr>
+                            <!-- <td>jtruquin</td>
                         <td>Javier Truquin</td>
                         <td>javiertruquin@gmail.com</td>
                         <td>Administrador</td>
@@ -162,9 +163,10 @@
                                 data-bs-toggle="modal" data-bs-target="#modalEditar"></i>
                             <i onclick="eliminarNota('${nota.id}')" class="fas fa-trash-alt boton-borrar mx-1"></i>
                         </td> -->
-                    </tr>
-                </tbody>
-            </table>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
@@ -282,56 +284,56 @@
             </div>
         </div>
     </div>
- <!-- MODAL EDITAR PERFIL -->
- <div class="modal fade" id="modalEditarPerfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form id="formularioEditarPerfil">
-                <div id="" class="modal-body">
-                    <div class="mx-5 mt-2 mb-3">
-                        <div class="">
-                            <label class="form-label" for="editarUsuario">Usuario</label>
-                        </div>
-                        <div class="">
-                            <input class="form-control w-100" type="text" id="editarUsuarioUI" required>
-                        </div>
-                    </div>
-                    <div class="mx-5 mt-2 mb-3">
-                        <div class="">
-                            <label class="form-label" for="editarNombre">Nombre y Apellido</label>
-                        </div>
-                        <div class="">
-                            <input class="form-control w-100" type="text" id="editarNombreUI" required>
-                        </div>
-                    </div>
-                    <div class="mx-5 mt-2 mb-3">
-                        <div class="">
-                            <label class="form-label" for="editarCorreo">Correo electronico</label>
-                        </div>
-                        <div class="">
-                            <input class="form-control w-100" type="email" id="editarCorreoUI" required>
-                        </div>
-                    </div>
-                    <div class="mx-5 mt-2 mb-3">
-                        <div class="">
-                            <label class="form-label" for="editarPass">Contraseña</label>
-                        </div>
-                        <div class="">
-                            <input class="form-control w-100" type="password" id="editarPassUI" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                    <button class="btn btn-primary" type="submit">Guardar</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+    <!-- MODAL EDITAR PERFIL -->
+    <div class="modal fade" id="modalEditarPerfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </form>
+                <form id="formularioEditarPerfil">
+                    <div id="" class="modal-body">
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="form-label" for="editarUsuario">Usuario</label>
+                            </div>
+                            <div class="">
+                                <input class="form-control w-100" type="text" id="editarUsuarioUI" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="form-label" for="editarNombre">Nombre y Apellido</label>
+                            </div>
+                            <div class="">
+                                <input class="form-control w-100" type="text" id="editarNombreUI" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="form-label" for="editarCorreo">Correo electronico</label>
+                            </div>
+                            <div class="">
+                                <input class="form-control w-100" type="email" id="editarCorreoUI" required>
+                            </div>
+                        </div>
+                        <div class="mx-5 mt-2 mb-3">
+                            <div class="">
+                                <label class="form-label" for="editarPass">Contraseña</label>
+                            </div>
+                            <div class="">
+                                <input class="form-control w-100" type="password" id="editarPassUI" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Guardar</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
