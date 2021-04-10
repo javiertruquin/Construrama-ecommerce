@@ -1,17 +1,11 @@
-body{   
-    font-family: 'Open Sans', sans-serif;
-}
+
 
 .btn-primary {
     color: #fff;
     background-color: rgb(20, 41, 103);;
     border-color: rgb(20, 41, 103);;
 }
-.tabla-azul{
-    color: white;
-    background-color: rgb(20, 41, 103);
-    
-}
+
 
 .logo{
     width: 210px;
@@ -29,9 +23,13 @@ body{
 .footer-bg{
     background-color: rgb(20, 41, 103);
     color: white;
-    height: 100vh;
-    height: 20vh;
+}
 
+@media only screen and (min-width: 1000px) {
+        .footer-abajo{
+            position:fixed;
+            bottom: 0;
+        }
 }
 
 .social-icon{
@@ -66,4 +64,7 @@ body{
 
 .colum-grande{
     max-width: 500px;
+}
+.navbar-toggler{
+    background-color:white ;
 }
