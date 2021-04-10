@@ -93,7 +93,7 @@
         <div class="card bordes col-xl-3 col-lg-5 col-10 m-lg-5 my-5 m-auto">
             <form class="formulario " id="formulario">
                 <h1 class="text-center mt-3" id="titulo">Alta de Usuario</h1>
-                <div class="mx-5 mt-2 mb-3">
+                <div class="mx-5 mt-2 mb-2">
                     <div class="">
                         <label class="form-label" for="inputUsuario">Usuario</label>
                     </div>
@@ -101,7 +101,7 @@
                         <input class="form-control w-100" type="text" id="inputUsuario" required>
                     </div>
                 </div>
-                <div class="mx-5 mt-2 mb-3">
+                <div class="mx-5 mt-2 mb-2">
                     <div class="">
                         <label class="form-label" for="inputNombre">Nombre y Apellido</label>
                     </div>
@@ -109,7 +109,7 @@
                         <input class="form-control w-100" type="text" id="inputNombre" required>
                     </div>
                 </div>
-                <div class="mx-5 mt-2 mb-3">
+                <div class="mx-5 mt-2 mb-2">
                     <div class="">
                         <label class="form-label" for="inputCorreo">Correo electronico</label>
                     </div>
@@ -117,7 +117,7 @@
                         <input class="form-control w-100" type="email" id="inputCorreo" required>
                     </div>
                 </div>
-                <div class="mx-5 mt-2 mb-3">
+                <div class="mx-5 mt-2 mb-2">
                     <div class="">
                         <label class="form-label" for="inputPass">Contraseña</label>
                     </div>
@@ -140,18 +140,19 @@
         </div>
         <!-- Tabla Usuarios -->
         <div class="col-xl-7 col-lg-5 col-10 m-lg-5 m-auto">
-            <table class="table table-bordered tabla-azul">
-                <thead>
-                    <tr>
-                        <th class="chico" scope="col">Usuario</th>
-                        <th class="chico" scope="col">Nombre y Apellido</th>
-                        <th class="chico" scope="col">Rol</th>
-                        <th class="chico" scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tabla">
-                    <tr>
-                        <!-- <td>jtruquin</td>
+            <div class="table-responsive">
+                <table class="table table-bordered tabla-azul">
+                    <thead>
+                        <tr>
+                            <th class="chico" scope="col">Usuario</th>
+                            <th class="chico" scope="col">Nombre y Apellido</th>
+                            <th class="chico" scope="col">Rol</th>
+                            <th class="chico" scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla">
+                        <tr>
+                            <!-- <td>jtruquin</td>
                         <td>Javier Truquin</td>
                         <td>javiertruquin@gmail.com</td>
                         <td>Administrador</td>
@@ -162,9 +163,10 @@
                                 data-bs-toggle="modal" data-bs-target="#modalEditar"></i>
                             <i onclick="eliminarNota('${nota.id}')" class="fas fa-trash-alt boton-borrar mx-1"></i>
                         </td> -->
-                    </tr>
-                </tbody>
-            </table>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 

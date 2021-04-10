@@ -9,7 +9,6 @@ const inerCard3 = [];
 
 function productosIndex() {
     let productos = JSON.parse(localStorage.getItem("productos"));
-
     let productosEncontrados = productos.map((cat) => {
         if (cat.categoria === "Griferías") {
             let card = `
@@ -56,9 +55,7 @@ function productosIndex() {
             inerCard1.push(card);
             productosCardGriferia.innerHTML = inerCard1.join("");
             modalCard.innerHTML = inerCard1.join("");
-
-        }
-        else if (cat.categoria === "Sanitarios") {
+        } else if (cat.categoria === "Sanitarios") {
             let card = `
             <div class="col-sm-3 card-col p-2" >
             <div class="card card-sm">
@@ -103,9 +100,7 @@ function productosIndex() {
             inerCard2.push(card);
             productosCardSanitario.innerHTML = inerCard2.join("");
             modalCard.innerHTML = inerCard2.join("");
-        }
-    
-        else {
+        } else {
             let card = `
             <div class="col-sm-3 card-col p-2" >
             <div class="card card-sm">
@@ -147,17 +142,10 @@ function productosIndex() {
                 </div>     
                 
                 `;
-        inerCard3.push(card);
-        productosCardPorcelanato.innerHTML = inerCard3.join("");
-        modalCard.innerHTML = inerCard3.join("");
-
-
-    
-    }
-
-});
-        
-
-    
+            inerCard3.push(card);
+            productosCardPorcelanato.innerHTML = inerCard3.join("");
+            modalCard.innerHTML = inerCard3.join("");
+        }
+    });
 }
 productosIndex();

@@ -33,7 +33,6 @@ function validarUsuarioSubmit(e) {
     e.preventDefault();
     const usuarioValido = usuariosPag.find((lUsuario) => lUsuario.usuario === usuario.value && lUsuario.pass === contra.value);
     if (usuarioValido) {
-        alert("Bienvenido " + usuarioValido.nombre);
         if (usuarioValido.rol === 'Administrador') {
             let logUsuario = `
         <li><a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a></li>

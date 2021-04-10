@@ -52,7 +52,7 @@ body{
     
 }
 
-@media only screen and (max-width: 400px) {
+/* @media only screen and (max-width: 400px) {
     .chico{
         font-size: x-small ;
     }
@@ -65,4 +65,4 @@ body{
     .chico2{
         font-size: x-small ;
     }
-}
+} */

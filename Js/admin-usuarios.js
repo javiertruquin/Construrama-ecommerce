@@ -1,23 +1,22 @@
-const formularioForm = document.getElementById('formulario');
-const usuarioInput = document.getElementById('inputUsuario');
-const nombreInput = document.getElementById('inputNombre');
-const correoInput = document.getElementById('inputCorreo');
-const passInput = document.getElementById('inputPass');
-const rolInput = document.getElementById('inputRol');
-const usuariosTable = document.getElementById('tabla')
+const formularioForm = document.getElementById("formulario");
+const usuarioInput = document.getElementById("inputUsuario");
+const nombreInput = document.getElementById("inputNombre");
+const correoInput = document.getElementById("inputCorreo");
+const passInput = document.getElementById("inputPass");
+const rolInput = document.getElementById("inputRol");
+const usuariosTable = document.getElementById("tabla");
 const editarForm = document.getElementById("formularioEditar");
 const editarUsuarioInput = document.getElementById("editarUsuario");
 const editarNombreInput = document.getElementById("editarNombre");
 const editarCorreoInput = document.getElementById("editarCorreo");
 const editarPassInput = document.getElementById("editarPass");
 const editarRolInput = document.getElementById("editarRol");
-const json = localStorage.getItem('usuarios'); 
-let usuarios = JSON.parse(json) || []; 
+const json = localStorage.getItem("usuarios");
+let usuarios = JSON.parse(json) || [];
 let usuarioId = "";
 function generarID() {
-
-    return '_' + Math.random().toString(36).substr(2, 9);
-};
+    return "_" + Math.random().toString(36).substr(2, 9);
+}
 
 formularioForm.onsubmit = function (e) {
     e.preventDefault();
@@ -28,9 +27,9 @@ formularioForm.onsubmit = function (e) {
         correo: correoInput.value,
         pass: passInput.value,
         rol: rolInput.value,
-        };
+    };
     usuarios.push(usuario);
-    localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
     mostrarUsuarios();
     formularioForm.reset(); // reset limpia los campos del formulario.
 };
@@ -55,24 +54,37 @@ function mostrarUsuarios() {
         `;
         filas.push(tr);
     }
-    usuariosTable.innerHTML = filas.join('');
+    usuariosTable.innerHTML = filas.join("");
 }
 
 mostrarUsuarios();
 
 function eliminarUsuario(id) {
-
-    let usuariosFiltradas = [];
+    let usuariosFiltrados = [];
     for (let i = 0; i < usuarios.length; i++) {
         const usuario = usuarios[i];
         const coincideId = usuario.id === id;
         if (!coincideId) {
-            usuariosFiltradas.push(usuario);
+            usuariosFiltrados.push(usuario);
         }
     }
-    const json = JSON.stringify(usuariosFiltradas);
+
+    let usuariosFiltradosAdmin = [];
+    for (let i = 0; i < usuariosFiltrados.length; i++) {
+        const usuario = usuariosFiltrados[i];
+        const coincideId = usuario.rol === "Administrador";
+        if (coincideId) {
+            usuariosFiltradosAdmin.push(usuario);
+        }
+    }
+    if (usuariosFiltradosAdmin.length === 0) {
+        alert("No puedes borrar el ultimo Administrador");
+        return;
+    }
+
+    const json = JSON.stringify(usuariosFiltrados);
     localStorage.setItem("usuarios", json);
-    usuarios = usuariosFiltradas;
+    usuarios = usuariosFiltrados;
     mostrarUsuarios();
 }
 
@@ -94,7 +106,7 @@ function cargarModalEditar(id) {
     editarNombreInput.value = usuarioEncontrado.nombre;
     editarCorreoInput.value = usuarioEncontrado.correo;
     editarPassInput.value = usuarioEncontrado.pass;
-    editarRolInput.value =usuarioEncontrado.rol;
+    editarRolInput.value = usuarioEncontrado.rol;
     usuarioId = usuarioEncontrado.id;
 }
 
@@ -102,7 +114,7 @@ editarForm.onsubmit = function (e) {
     e.preventDefault();
 
     const usuariosModificados = usuarios.map((usuario) => {
-               if (usuario.id === usuarioId)         {
+        if (usuario.id === usuarioId) {
             const usuariosModificados = {
                 ...usuario,
                 usuario: editarUsuarioInput.value,
@@ -110,7 +122,6 @@ editarForm.onsubmit = function (e) {
                 coreo: editarCorreoInput.value,
                 pass: editarPassInput.value,
                 rol: editarRolInput.value,
-
             };
             return usuariosModificados;
         } else {
@@ -121,7 +132,7 @@ editarForm.onsubmit = function (e) {
     localStorage.setItem("usuarios", json);
     usuarios = usuariosModificados;
     mostrarUsuarios();
-    const myModal = document.getElementById('modalEditar')
+    const myModal = document.getElementById("modalEditar");
     const modal = bootstrap.Modal.getInstance(myModal);
     modal.hide();
     formularioForm.reset();
