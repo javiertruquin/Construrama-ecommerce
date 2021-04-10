@@ -58,17 +58,17 @@ function mostrarProductos() {
         let producto = productos[i];
         let tr =
             `<tr>
-            <td class="chico2 colum-pequeña">${producto.codigoDeFabricante}</td>
-            <td class="chico2 colum-pequeña">${producto.categoria}</td>
-            <td class="chico2 colum-pequeña">${producto.articulo}</td>
-            <td class="chico2 colum-pequeña">$${producto.precio}</td>
-            <td class="chico2 colum-pequeña">${producto.cantidad}</td>
+            <td class="chico2 colum-pequeña text-center">${producto.codigoDeFabricante}</td>
+            <td class="chico2 colum-pequeña text-center">${producto.categoria}</td>
+            <td class="chico2 colum-pequeña text-center">${producto.articulo}</td>
+            <td class="chico2 colum-pequeña text-center">$${producto.precio}</td>
+            <td class="chico2 colum-pequeña text-center">${producto.cantidad}</td>
             <td>
-            <i onclick="mostrarDetalle('${producto.id}')" class="fas fa-search boton-buscar mx-1"
+            <i onclick="mostrarDetalle('${producto.id}')" class="fas fa-search boton-buscar mx-1 text-center"
                 data-bs-toggle="modal" data-bs-target="#modalDetalle"></i>
-            <i onclick="cargarModalEditar('${producto.id}')" class="fas fa-edit boton-editar mx-1"
+            <i onclick="cargarModalEditar('${producto.id}')" class="fas fa-edit boton-editar mx-1 text-center"
                 data-bs-toggle="modal" data-bs-target="#modalEditar"></i>
-            <i onclick="eliminarProducto('${producto.id}')" class="fas fa-trash-alt boton-borrar mx-1"></i>                           
+            <i onclick="eliminarProducto('${producto.id}')" class="fas fa-trash-alt boton-borrar mx-1 text-center"></i>                           
                 </td>
 
         </tr>`;

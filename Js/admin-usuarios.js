@@ -70,6 +70,7 @@ function eliminarUsuario(id) {
             usuariosFiltradas.push(usuario);
         }
     }    
+    
     if (usuarios.length === 1){
         alert("No puedes borrar el ultimo usuario");
         return
