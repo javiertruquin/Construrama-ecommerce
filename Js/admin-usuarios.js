@@ -90,7 +90,6 @@ function eliminarUsuario(id) {
 
 function cargarModalEditar(id) {
     const usuarioEncontrado = usuarios.find((usuario) => usuario.id === id);
-    console.log("cargarModalEditar ~ usuarioEncontrado", usuarioEncontrado)
     editarUsuarioInput.value = usuarioEncontrado.usuario;
     editarNombreInput.value = usuarioEncontrado.nombre;
     editarCorreoInput.value = usuarioEncontrado.correo;
@@ -103,7 +102,7 @@ editarForm.onsubmit = function (e) {
     e.preventDefault();
 
     const usuariosModificados = usuarios.map((usuario) => {
-        if (usuario.id === usuarioId) {
+               if (usuario.id === usuarioId)         {
             const usuariosModificados = {
                 ...usuario,
                 usuario: editarUsuarioInput.value,

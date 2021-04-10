@@ -11,10 +11,19 @@ const nombreInputUI = document.getElementById('inputNombre');
 const correoInputUI = document.getElementById('inputCorreo');
 const passInputUI = document.getElementById('inputPass');
 const usuarioExLabel = document.getElementById('usuarioExisteUI');
-// CONVERSION DE STRING A ARRAY Y AL REVES
-
+const verificaPass = document.getElementById('inputPass2');
+const verificaPassLabel = document.getElementById('contraseñaCoinciden');
+// EDITAR PERFIL
+const editarFormPerfil = document.getElementById("formularioEditarPerfil");
+const editarUsuarioPerfil = document.getElementById("editarUsuarioUI");
+const editarNombrePerfil = document.getElementById("editarNombreUI");
+const editarCorreoPerfil = document.getElementById("editarCorreoUI");
+const editarPassPerfil = document.getElementById("editarPassUI");
+// ARREGLOS INICIALIZADOS
 let sesionIniciada = [];
 let userLog = [];
+let usuariosPag = JSON.parse(localStorage.getItem('usuarios')) || []; // CONVERSION DE STRING A ARRAY Y AL REVES
+
 function generarID() {
 
     return '_' + Math.random().toString(36).substr(2, 9);
@@ -22,8 +31,7 @@ function generarID() {
 
 function validarUsuarioSubmit(e) {
     e.preventDefault();
-    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const usuarioValido = usuarios.find((lUsuario) => lUsuario.usuario === usuario.value && lUsuario.pass === contra.value);
+    const usuarioValido = usuariosPag.find((lUsuario) => lUsuario.usuario === usuario.value && lUsuario.pass === contra.value);
     if (usuarioValido) {
         alert("Bienvenido " + usuarioValido.nombre);
         if (usuarioValido.rol === 'Administrador') {
@@ -31,7 +39,7 @@ function validarUsuarioSubmit(e) {
         <li><a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a></li>
         <li><a class="nav-link active text-white" aria-current="page" href="./admin-productos.html">Modificar Productos</a></li>
         <li><a class="nav-link active text-white" aria-current="page" href="./admin-usuarios.html">Modificar Usuarios</a></li>
-        <li><a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a></li>
+        <li><a class="nav-link active text-white" aria-current="page" href="" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil" onclick="cargarModalEditarPerfil('${usuarioValido.id}')">USUARIO: ${usuarioValido.usuario}</a></li>
         <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
                     `;
             userLog.push(logUsuario);
@@ -39,14 +47,13 @@ function validarUsuarioSubmit(e) {
             sessionStorage.setItem('sesion', JSON.stringify(sesionIniciada));
             sessionStorage.setItem('log', JSON.stringify(userLog));
             window.location = "admin-usuarios.html";
-            console.log(userLog);
         }
         else if (usuarioValido.rol === 'Empleado') {
             let logUsuario = `
-            <li><a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a></li>
+        <li><a class="nav-link active text-white" aria-current="page" href="./index.html">Inicio</a></li>
         <li><a class="nav-link active text-white" aria-current="page" href="./admin-productos.html">Modificar Productos</a></li>
-        <li><a class="nav-link active text-white" aria-current="page" href="#perfil">USUARIO: ${usuarioValido.usuario}</a></li>
-         <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
+        <li><a class="nav-link active text-white" aria-current="page" href="" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil" onclick="cargarModalEditarPerfil('${usuarioValido.id}')">USUARIO: ${usuarioValido.usuario}</a></li>
+        <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
                     `;
             userLog.push(logUsuario);
             sesionIniciada.push(usuarioValido);
@@ -72,7 +79,7 @@ function validarUsuarioSubmit(e) {
             <li class="nav-item">
               <a class="nav-link active text-white" aria-current="page" href="./index.html#sec-sobrenosotros">Sobre Nosotros</a>
             </li>
-         <li><a class="nav-link active text-white" aria-current="page" href="#">USUARIO: ${usuarioValido.usuario}</a><li>
+            <li><a class="nav-link active text-white" aria-current="page" href="" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil" onclick="cargarModalEditarPerfil('${usuarioValido.id}')">USUARIO: ${usuarioValido.usuario}</a></li>
          <li><a class="nav-link active text-white" aria-current="page" id="closeUI" href="#">Cerrar sesion</a></li>
                     `;
             userLog.push(logUsuario);
@@ -104,20 +111,23 @@ function enviarFormularioRegistro(e) {
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
     usuarioExiste = usuarios.find((usuarioEx) => usuarioEx.usuario === usuarioInputUI.value)
     if (usuarioExiste == null || undefined) {
-        usuarios.push(usuario);
-        const json = JSON.stringify(usuarios); // Convertir datos a un string JSON.
-        localStorage.setItem('usuarios', json);
-        const myModal = document.getElementById('formulario')
-        const modal = bootstrap.Modal.getInstance(myModal);
-        modal.hide();
-        formularioFormLog.reset(); // reset limpia los campos del formulario.
-        alert("Bienvenido a Construrama " + usuario.nombre + " se registro exitosamente");
+        if (passInputUI.value === verificaPass.value) {
+            usuarios.push(usuario);
+            localStorage.setItem('usuarios', JSON.stringify(usuarios))
+            const myModal = document.getElementById('formulario')
+            const modal = bootstrap.Modal.getInstance(myModal);
+            modal.hide();
+            alert("Bienvenido a Construrama " + usuario.nombre + " se registro exitosamente");
+        }
+        else {
+            verificaPassLabel.classList.remove('d-none');
+        }
     }
     else {
         usuarioExLabel.classList.remove('d-none');
     }
+    formularioFormLog.reset();
 };
-
 
 function verificaSesion() {
     if (sessionStorage.getItem('sesion') === null) { }
@@ -134,6 +144,45 @@ function closeSesion() {
         sessionStorage.removeItem('sesion');
     })
 }
+
+// EDITAR MODAL PERFIL
+function cargarModalEditarPerfil(id) {
+    let usuarioEncontrado = usuariosPag.find((lUsuario) => lUsuario.id === id);
+    editarUsuarioPerfil.value = usuarioEncontrado.usuario;
+    editarNombrePerfil.value = usuarioEncontrado.nombre;
+    editarCorreoPerfil.value = usuarioEncontrado.correo;
+    editarPassPerfil.value = usuarioEncontrado.pass;
+    usuarioId = usuarioEncontrado.id;
+}
+// ENVIAR FORMULARIO
+editarFormPerfil.onsubmit = function (e) {
+    e.preventDefault();
+    const usuariosModificados = usuariosPag.map((lUsuario) => {
+        if (lUsuario.id === usuarioId) {
+            const usuariosModificados = {
+                ...lUsuario,
+                id: usuarioId,
+                usuario: editarUsuarioPerfil.value,
+                nombre: editarNombrePerfil.value,
+                correo: editarCorreoPerfil.value,
+                pass: editarPassPerfil.value,
+                rol: lUsuario.rol,
+            };
+            return usuariosModificados;
+
+        } else {
+            return lUsuario;
+
+        }
+    });
+    localStorage.setItem("usuarios", JSON.stringify(usuariosModificados));
+    usuariosPag = usuariosModificados;
+    verificaSesion();
+    const myModal = document.getElementById('modalEditarPerfil')
+    const modal = bootstrap.Modal.getInstance(myModal);
+    modal.hide();
+    editarFormPerfil.reset();
+};
 
 login.onsubmit = validarUsuarioSubmit;
 formularioFormLog.onsubmit = enviarFormularioRegistro;

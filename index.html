@@ -75,20 +75,25 @@
                         aria-label="Close"></button>
                 </div>
                 <form class="modal-body" id="registro">
-                    <label for="usuario" class="me-5"> Usuario </label><br>
-                    <input type="text" id="inputUsuario" placeholder="Usuario" class="mt-2 mb-2"><br>
-
+                    <label for="usuario" class="me-5"> Usuario </label>
+                    <label for="usuario" class="me-5 d-none" id="usuarioExisteUI" style="color:red;"> EL USUARIO YA EXISTE</label>
+                    <br>
+                    <input type="text" id="inputUsuario" placeholder="Usuario" class="mt-2 mb-2" required><br>
+        
                     <label for="Nombre y Apellido" class="mt-2 mb-2">Nombre y Apellido</label><br>
-                    <input type="text" id="inputNombre" name="" placeholder="Nombre y Apellido" class="mb-2"><br>
-
-                    <label for="password" class="mt-2 mb-2">Contraseña</label><br>
-                    <input type="password" id="inputPass" name="" placeholder="Contraseña" class="mb-2"><br>
-
+                    <input type="text" id="inputNombre" name="" placeholder="Nombre y Apellido" class="mb-2" required><br>
+        
+                    <label for="password" class="mt-2 mb-2">Contraseña</label>
+                    <label for="usuario" class="me-5 d-none" id="contraseñaCoinciden" style="color:red;"> NO COINCIDEN LAS CONTRASEÑAS</label>
+                    <br>
+                    <input type="password" id="inputPass" name="" placeholder="Contraseña" class="mb-2" required><br>
+                   
+                    <label for="password2" class="mt-2 mb-2">Contraseña</label><br>
+                    <input type="password" id="inputPass2" name="" placeholder="Repetir contraseña" class="mb-2" required><br>
+        
                     <label for="password" class="mt-2 mb-2">Correo Electronico</label><br>
-                    <input type="email" id="inputCorreo" name="" placeholder="Ej:lrlichardi@hotmail.com"
-                        class="mb-2"><br>
-
-
+                    <input type="email" id="inputCorreo" name=""  placeholder="Ej:lrlichardi@hotmail.com" class="mb-2" required><br>
+        
                     <label for="" class="cajacheck ms-2 mb-2 mt-3"><input type="checkbox" class="me-1 ms-1 ">Acepto<a
                             style="font-size: 15px;" href="">Terminos y condiciones</a></label>
                     <div class="modal-footer">
@@ -98,6 +103,7 @@
             </div>
         </div>
     </div>
+    
     <header>
         <div id="loginUI" class="d-none"></div>
 
@@ -966,7 +972,56 @@
         </section>
     </section>
 
-
+ <!-- MODAL EDITAR PERFIL -->
+ <div class="modal fade" id="modalEditarPerfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="formularioEditarPerfil">
+                <div id="" class="modal-body">
+                    <div class="mx-5 mt-2 mb-3">
+                        <div class="">
+                            <label class="form-label" for="editarUsuario">Usuario</label>
+                        </div>
+                        <div class="">
+                            <input class="form-control w-100" type="text" id="editarUsuarioUI" required>
+                        </div>
+                    </div>
+                    <div class="mx-5 mt-2 mb-3">
+                        <div class="">
+                            <label class="form-label" for="editarNombre">Nombre y Apellido</label>
+                        </div>
+                        <div class="">
+                            <input class="form-control w-100" type="text" id="editarNombreUI" required>
+                        </div>
+                    </div>
+                    <div class="mx-5 mt-2 mb-3">
+                        <div class="">
+                            <label class="form-label" for="editarCorreo">Correo electronico</label>
+                        </div>
+                        <div class="">
+                            <input class="form-control w-100" type="email" id="editarCorreoUI" required>
+                        </div>
+                    </div>
+                    <div class="mx-5 mt-2 mb-3">
+                        <div class="">
+                            <label class="form-label" for="editarPass">Contraseña</label>
+                        </div>
+                        <div class="">
+                            <input class="form-control w-100" type="password" id="editarPassUI" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button class="btn btn-primary" type="submit">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
     <footer class="footer-bg container-fluid">
         <div class="row p-2 align-items-center text-center text-md-start">
