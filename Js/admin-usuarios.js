@@ -69,6 +69,11 @@ function eliminarUsuario(id) {
         if (!coincideId) {
             usuariosFiltradas.push(usuario);
         }
+    }    
+    if (usuarios.length === 1){
+        alert("No puedes borrar el ultimo usuario");
+        return
+
     }
     const json = JSON.stringify(usuariosFiltradas);
     localStorage.setItem("usuarios", json);
