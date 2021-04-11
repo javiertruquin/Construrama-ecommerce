@@ -19,7 +19,7 @@ function productosIndex() {
                         <div class="card-body">
                         <h5 class="card-title">$${cat.precio}</h5>
                         <p class="card-text">${cat.categoria}</p>
-                        <p class="card-text">${cat.articulo} ${cat.marca}</p>
+                        <p class="card-text">${cat.articulo} - ${cat.marca}</p>
                         <button class="btn btn-secondary btn-sm"><i
                                 class="fas fa-shopping-cart"></i></button>
                                 <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
@@ -33,16 +33,26 @@ function productosIndex() {
                             <div class="modal-content">
                             <div class="modal-header">
                                         <h5 class="modal-title" id="staticBackdropLabel">Descripción</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body">
-                                        <p>${cat.descripcion}</p>
+                                        <div class="d-flex">
+                                            <div class="m-5">
+                                                <h5><b>Categoria: </b></h5> <p>${cat.categoria}</p>
+                                                <h5><b>Artículo y Apellido:</b></h5> <p>${cat.articulo}</p>
+                                                <h5><b>Marca:</b></h5> <p>${cat.marca}</p>
+                                                <h5><b>Descripcion:</b></h5> <p>${cat.descripcion}</p>
+                                                <h5><b>Precio:</b></h5> <p>$ ${cat.precio}</p>
+                                                <h5><b>Cantidad:</b></h5> <p>${cat.cantidad}</p>
+                                                <h5><b>Codigo de fabricante:</b></h5> <p>${cat.codigoDeFabricante}</p>
+                                                <h5><b>Unidad de venta:</b></h5> <p>${cat.unidadDeVenta}</p>
+                                            </div>
+                                            <div class="m-5" style="width:400px">
+                                                <h5><b>Imagen: </b></h5>
+                                                <img src="${cat.imagen}" class="w-100" alt="...">
+                                            </div>
                                         </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
-                                    data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Understood</button>
+                                    data-bs-dismiss="modal">Cerrar</button>
                                         </div>
                                         </div>
                                         </div>

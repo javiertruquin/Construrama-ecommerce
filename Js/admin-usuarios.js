@@ -12,7 +12,16 @@ const editarCorreoInput = document.getElementById("editarCorreo");
 const editarPassInput = document.getElementById("editarPass");
 const editarRolInput = document.getElementById("editarRol");
 const json = localStorage.getItem("usuarios");
-let usuarios = JSON.parse(json) || [];
+let usuarios = JSON.parse(json) || localStorage.setItem('usuarios',JSON.stringify([
+    {
+        "id": "_asd23xcza",
+        "usuario": "admin",
+        "nombre": "Administrador Predeterminado",
+        "correo": "admin@admin",
+        "pass": "admin",
+        "rol": "Administrador"
+    }
+]));
 let usuarioId = "";
 function generarID() {
     return "_" + Math.random().toString(36).substr(2, 9);
