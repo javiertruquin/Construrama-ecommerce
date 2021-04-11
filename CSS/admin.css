@@ -1,5 +1,8 @@
 body{
     background-color:rgb(255, 185, 73) ;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar-color{
