@@ -6,7 +6,14 @@
     border-color: rgb(20, 41, 103);;
 }
 
-
+.btn-secondary{
+    background-color: rgb(255, 147, 46);
+    border-color: rgb(255, 147, 46);
+}
+.btn-secondary:hover{
+    background-color: rgb(255, 185, 73);
+    border-color: rgb(255, 185, 73);
+}
 .logo{
     width: 210px;
     padding-top: 0;
