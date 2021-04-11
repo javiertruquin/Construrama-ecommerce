@@ -32,7 +32,7 @@ function productosIndex() {
                             <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-header">
-                                        <h5 class="modal-title" id="staticBackdropLabel">Descripción</h5>
+                                        <h5 class="modal-title" id="staticBackdropLabel"><b>Descripción</b></h5>
                                         </div>
                                         <div class="d-flex">
                                             <div class="m-5">
