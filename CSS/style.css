@@ -46,6 +46,11 @@
 .nav-link{
     color: white;
 }
+
+/* .nav-item:hover{
+    border: rgb(20, 41, 103);
+    background-color: rgb(20, 41, 103);
+} */
 .nav a{
     text-decoration: none;
 } 
@@ -68,3 +73,4 @@
 .navbar-toggler{
     background-color:white ;
 }
+
