@@ -259,7 +259,7 @@ function mostrarDetalle(id) {
         </div>
         <div class="">
             <h5><b>Imagen: </b></h5>
-            <img src="${productoEncontrado.imagen}" class="" alt="...">
+            <img src="${productoEncontrado.imagen}" class="w-100" alt="...">
         </div>
     </div>
 
