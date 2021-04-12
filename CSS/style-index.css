@@ -8,10 +8,6 @@ body {font-family: 'Open Sans', sans-serif;;
     margin-right: auto;
     max-width: 93%;
 }
-.dropdown-item:hover{
-    color:rgb(255, 147, 46) !important;
-    background: none;
-    }
 .seccion-art-titulo hr {
     width: 120px;
     position: relative;
@@ -65,23 +61,4 @@ body {font-family: 'Open Sans', sans-serif;;
 }
 .menu{
     background-color: rgb(20, 41, 103)!important;
-}
-ul#navbarUI li a:after{
-    position: absolute;
-    bottom: 7px;
-    left: 0px;
-    width: 98%;
-    height: 4px;
-    background-color:rgb(255, 185, 73);
-    color:rgb(255, 147, 46) !important;
-    content: "";
-    opacity: 0;
-    transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
-    transform: translateY(20px);      
-}
-ul#navbarUI li a:hover:after{
-    opacity:1;
-    transform: translateY(10px);
-    color:rgb(255, 147, 46) !important;
-    
 }

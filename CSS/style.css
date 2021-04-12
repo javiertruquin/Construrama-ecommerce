@@ -54,9 +54,9 @@
     border: rgb(20, 41, 103);
     background-color: rgb(20, 41, 103);
 } */
-.nav a{
+/* .nav a{
     text-decoration: none;
-} 
+}  */
 
 .imagen-table{
     width: 400px;
@@ -75,6 +75,16 @@
 }
 .navbar-toggler{
     background-color:white ;
+}
+ul#navbarUI li a{
+    position: relative;
+    color:#0E83CD;
+    margin: 0px 10px;
+    
+}
+ul#navbarUI li a:hover{
+    color:rgb(255, 147, 46) !important;
+    
 }
 ul#navbarUI li a:after{
     position: absolute;
@@ -95,4 +105,5 @@ ul#navbarUI li a:hover:after{
     color:rgb(255, 147, 46) !important;
     
 }
+
 
