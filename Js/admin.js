@@ -19,10 +19,7 @@ const editarPrecioInput = document.getElementById("editarPrecio");
 const editarCantidadInput = document.getElementById("editarCantidad");
 const editarCodigoDeFabricanteInput = document.getElementById("editarFabricante");
 const editarUnidadDeVentaInput = document.getElementById("editarUnidad");
-// let json = localStorage.getItem('productos');
-// let productos = JSON.parse(json) || [];
 let productoId = '';
-
 let productos = JSON.parse(localStorage.getItem('productos')) || localStorage.setItem('productos',JSON.stringify([
     {
         "id": "_bh9oa792e",
