@@ -49,6 +49,11 @@
 .nav-link{
     color: white;
 }
+
+/* .nav-item:hover{
+    border: rgb(20, 41, 103);
+    background-color: rgb(20, 41, 103);
+} */
 .nav a{
     text-decoration: none;
 } 
@@ -90,3 +95,4 @@ ul#navbarUI li a:hover:after{
     color:rgb(255, 147, 46) !important;
     
 }
+
